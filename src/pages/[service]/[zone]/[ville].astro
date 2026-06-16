@@ -307,7 +307,6 @@ const tarifLines: TarifEntry[] = service.tarifs
     </section>
 
     <!-- Maillage interne : communes adjacentes -->
-    <InternalLinks commune={commune} service={service} zone={zone} />
-
-  </main>
-</Layout>
+    <InternalLinks
+      adjacentes={commune.adjacentes ?? []}
+      serviceSlug={service.s
