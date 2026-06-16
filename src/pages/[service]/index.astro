@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import knowledgeMap from '../../../data/knowledge_map.json';
+
+export function getStaticPaths() {
+  return Object.values(knowledgeMap.services).map((service) => ({
+    params: { service: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const site = knowledgeMap._meta.department.siteUrl;
+
+// Zones qui proposent ce service (avec la clé "nord"/"sud" pour filtrer les communes)
+const relevantZones = Object.entries(knowledgeMap.zones)
+  .filter(([k, z]) => z.primaryServices.includes(service.slug))
+  .map(([k, z]) => ({ ...z, key: k }));
+
+// Communes par zone (triées par population)
+const communesByZone = Object.fromEntries(
+  relevantZones.map((zone) => [
+    zone.slug,
+    knowledgeMap.communes
+      .filter((c) => c.zone === zone.key)
+      .sort((a, b) => b.population - a.population),
+  ])
+);
+
+const canonicalURL = `${site}/${service.slug}/`;
+
+const breadcrumbs = [
+  { label: 'Accueil', href: '/' },
+  { label: service.label, href: `/${service.slug}/`, current: true },
+];
+
+const isUrgence = service.urgence === true;
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${service.label} en Essonne (91)`,
+  "serviceType": service.label,
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Essonne",
+    "identifier": "91"
+  },
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Guide Assainissement 91",
+    "url": site
+  }
+};
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": site },
+    { "@type": "ListItem", "position": 2, "name": service.label, "item": canonicalURL }
+  ]
+};
+---
+
+<Layout
+  title={`${service.label} Essonne (91) - Artisans Agréés | Guide 91`}
+  description={`Trouvez un professionnel agréé pour votre ${service.label.toLowerCase()} en Essonne (91). Intervention sur ${knowledgeMap.communes.length} communes. Devis gratuit.`}
+  canonical={canonicalURL}
+  schemas={[schemaService, schemaBreadcrumb]}
+>
+  <main class="max-w-5xl mx-auto px-4 py-8">
+
+    <Breadcrumb items={breadcrumbs} />
+
+    <!-- Hero -->
+    <div class={`rounded-2xl p-8 mb-8 ${isUrgence ? 'bg-urgence-600 text-white' : 'bg-brand-900 text-white'}`}>
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div class="flex-1">
+          {isUrgence && (
+            <span class="inline-block bg-white text-urgence-700 font-bold text-xs px-3 py-1 rounded-full mb-3 uppercase tracking-wide">
+              Disponible 24h/24 – 7j/7
+            </span>
+          )}
+          <h1 class="text-3xl md:text-4xl font-bold mb-3">
+            {service.label} en Essonne (91)
+          </h1>
+          <p class="text-lg opacity-90 max-w-2xl">
+            {service.description} Retrouvez nos artisans agréés dans les {knowledgeMap.communes.length} communes de l'Essonne.
+          </p>
+        </div>
+        {isUrgence && (
+          <a
+            href={`/track/appel/${service.slug}/hub/`}
+            class="flex-shrink-0 bg-white text-urgence-700 hover:bg-urgence-50 font-bold px-6 py-4 rounded-xl transition-colors text-center text-lg shadow-lg"
+          >
+            📞 Appel d'urgence<br/>
+            <span class="text-sm font-normal">Intervention rapide</span>
+          </a>
+        )}
+      </div>
+    </div>
+
+    <!-- Zones de couverture -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Zones d'intervention</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {relevantZones.map((zone) => {
+          const communes = communesByZone[zone.slug] ?? [];
+          const featured = communes.slice(0, 6);
+          return (
+            <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+              <a href={`/${service.slug}/${zone.slug}/`}>
+                <h3 class="text-xl font-bold text-brand-800 mb-1 hover:text-brand-600">
+                  {zone.label} →
+                </h3>
+              </a>
+              <p class="text-sm text-gray-500 mb-4">{zone.description}</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {featured.map((c) => (
+                  <a
+                    href={`/${service.slug}/${zone.slug}/${c.slug}/`}
+                    class="text-xs bg-gray-100 hover:bg-brand-100 text-gray-700 hover:text-brand-800 px-2 py-1 rounded transition-colors"
+                  >
+                    {c.name}
+                  </a>
+                ))}
+                {communes.length > 6 && (
+                  <a
+                    href={`/${service.slug}/${zone.slug}/`}
+                    class="text-xs text-brand-600 hover:text-brand-800 px-2 py-1 font-medium"
+                  >
+                    +{communes.length - 6} communes →
+                  </a>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Pourquoi nous choisir -->
+    <section class="bg-gray-50 rounded-2xl p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Pourquoi faire appel à un professionnel agréé ?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <div class="text-3xl mb-2">🏅</div>
+          <h3 class="font-semibold text-gray-800 mb-1">Agréments préfectoraux</h3>
+          <p class="text-sm text-gray-600">Tous nos artisans disposent des agréments requis par la préfecture de l'Essonne.</p>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">📋</div>
+          <h3 class="font-semibold text-gray-800 mb-1">Conformité réglementaire</h3>
+          <p class="text-sm text-gray-600">Intervention conforme aux normes en vigueur. Documents fournis pour le SPANC si besoin.</p>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">⚡</div>
+          <h3 class="font-semibold text-gray-800 mb-1">Rapidité d'intervention</h3>
+          <p class="text-sm text-gray-600">Artisans locaux disponibles rapidement dans toute l'Essonne (91).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <div class={`rounded-2xl p-8 text-center ${isUrgence ? 'bg-urgence-600' : 'bg-brand-900'} text-white`}>
+      <h2 class="text-2xl font-bold mb-2">Besoin d'un {service.label.toLowerCase()} en Essonne ?</h2>
+      <p class="opacity-90 mb-6">Devis gratuit — Artisans agréés — Intervention rapide</p>
+      <a
+        href={`/track/appel/${service.slug}/hub/`}
+        class={`inline-flex items-center gap-2 font-bold px-8 py-3 rounded-xl transition-colors text-lg ${isUrgence ? 'bg-white text-urgence-700 hover:bg-urgence-50' : 'bg-urgence-500 hover:bg-urgence-400 text-white'}`}
+      >
+        Demander un devis gratuit
+      </a>
+    </div>
+
+  </main>
+</Layout>

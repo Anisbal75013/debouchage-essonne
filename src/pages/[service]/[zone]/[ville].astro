@@ -1,0 +1,313 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import InternalLinks from '../../../components/InternalLinks.astro';
+import knowledgeMap from '../../../../data/knowledge_map.json';
+
+export function getStaticPaths() {
+  // Mode filtré : ne générer que les hubs (pages index des services/zones)
+  // Usage : ASTRO_FILTER=hubs_only npm run build
+  if (process.env.ASTRO_FILTER === 'hubs_only') return [];
+
+  const paths = [];
+
+  for (const commune of knowledgeMap.communes) {
+    const zone = knowledgeMap.zones[commune.zone];
+    if (!zone) continue;
+
+    for (const serviceKey of zone.primaryServices) {
+      const service = knowledgeMap.services[serviceKey];
+      if (!service) continue;
+
+      paths.push({
+        params: {
+          service: service.slug,
+          zone:    zone.slug,
+          ville:   commune.slug,
+        },
+        props: {
+          commune,
+          service,
+          zone,
+          spanc: commune.spanc ? knowledgeMap.spanc[commune.spanc] ?? null : null,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { commune, service, zone, spanc } = Astro.props;
+const siteUrl = knowledgeMap._meta.department.siteUrl;
+
+// ── Tracking ──────────────────────────────────────────────────────────────────
+// URL structurée → loggée dans Cloudflare Analytics (Top Paths)
+// Format : /track/appel/{service}/{zone}/{commune}/
+const callTrackingSlug = `${service.slug}/${zone.slug}/${commune.slug}`;
+
+// ── SEO ───────────────────────────────────────────────────────────────────────
+const title = `${service.label} a ${commune.name} (${commune.cp[0]}) - Artisans Agrees Essonne 91`;
+const description =
+  commune.seo.metaDescription ??
+  `${service.label} a ${commune.name} (${commune.cp[0]}). Professionnels agrees Essonne (91). Devis gratuit, intervention rapide.`;
+const canonical = `${siteUrl}/${service.slug}/${zone.slug}/${commune.slug}/`;
+
+// ── Breadcrumbs ───────────────────────────────────────────────────────────────
+const breadcrumbs = [
+  { name: 'Accueil',      url: '/' },
+  { name: service.label,  url: `/${service.slug}/` },
+  { name: zone.label,     url: `/${service.slug}/${zone.slug}/` },
+  { name: commune.name,   url: `/${service.slug}/${zone.slug}/${commune.slug}/` },
+];
+
+// ── JSON-LD : BreadcrumbList ──────────────────────────────────────────────────
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    item: `${siteUrl}${item.url}`,
+  })),
+};
+
+// ── JSON-LD : LocalBusiness ───────────────────────────────────────────────────
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: `${service.label} ${commune.name}`,
+  description,
+  url: canonical,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: commune.name,
+    postalCode: commune.cp[0],
+    addressRegion: 'Essonne',
+    addressCountry: 'FR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: commune.geo.lat,
+    longitude: commune.geo.lng,
+  },
+  areaServed: { '@type': 'City', name: commune.name },
+  serviceType: service.label,
+  priceRange: service.tarifs
+    ? `A partir de ${Object.values(service.tarifs).find((v: unknown) => typeof v === 'number')} EUR`
+    : 'EUR',
+};
+
+// ── JSON-LD : FAQ ─────────────────────────────────────────────────────────────
+const isNonCollectif = commune.assainissement !== 'collectif';
+
+const faqItems = [
+  {
+    question: `Quel est le prix d'une ${service.label.toLowerCase()} a ${commune.name} ?`,
+    answer: service.tarifs
+      ? `Le tarif varie selon la prestation. Comptez en moyenne entre ${
+          (service.tarifs as Record<string,unknown>).interventionMin ?? (service.tarifs as Record<string,unknown>).fosse3000L ?? 'plusieurs dizaines'
+        } et ${
+          (service.tarifs as Record<string,unknown>).interventionMax ?? (service.tarifs as Record<string,unknown>).fosse5000L ?? 'plusieurs centaines'
+        } ${(service.tarifs as Record<string,unknown>).unite ?? 'EUR TTC'}. Demandez un devis gratuit.`
+      : `Contactez nos artisans partenaires a ${commune.name} pour un devis gratuit.`,
+  },
+  {
+    question: `Intervenez-vous en urgence a ${commune.name} (${commune.cp[0]}) ?`,
+    answer: service.urgence
+      ? `Oui, nos artisans interviennent en urgence 24h/24 et 7j/7 a ${commune.name} et dans toutes les communes de l'Essonne (91).`
+      : `Nos artisans interviennent rapidement a ${commune.name}. Un rendez-vous est generalement disponible sous 24 a 48h.`,
+  },
+  ...(isNonCollectif && spanc
+    ? [{
+        question: `Quelles sont les obligations SPANC a ${commune.name} ?`,
+        answer: `A ${commune.name}, l'assainissement non collectif est gere par le ${spanc.name}. Contactez-les pour connaitre les modalites de controle et les tarifs en vigueur.`,
+      }]
+    : []),
+  {
+    question: `Comment choisir un artisan agree a ${commune.name} ?`,
+    answer: `Privilegiez un professionnel disposant de l'agrement prefectoral pour le transport de matieres de vidange, d'une assurance RC pro et d'avis clients verifies. Notre annuaire recense uniquement des artisans certifies en Essonne (91).`,
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+const schemas = [breadcrumbSchema, localBusinessSchema, faqSchema];
+
+// ── Tarifs a afficher ─────────────────────────────────────────────────────────
+type TarifEntry = { label: string; value: number; unite: string };
+const tarifLabels: Record<string, string> = {
+  interventionMin: 'Intervention (min)',
+  interventionMax: 'Intervention (max)',
+  urgenceNuit:     'Urgence nuit / weekend',
+  hydrocurage:     'Hydrocurage',
+  fosse3000L:      'Fosse 3 000 L',
+  fosse5000L:      'Fosse 5 000 L',
+  fosse8000L:      'Fosse 8 000 L',
+  microStation:    'Micro-station',
+  lineaireMin:     'Par metre (min)',
+  lineaireMax:     'Par metre (max)',
+  forfaitMinimum:  'Forfait minimum',
+  passageMin:      'Passage (min)',
+  passageMax:      'Passage (max)',
+};
+const tarifLines: TarifEntry[] = service.tarifs
+  ? Object.entries(service.tarifs as Record<string, unknown>)
+      .filter(([, v]) => typeof v === 'number')
+      .map(([k, v]) => ({
+        label: tarifLabels[k] ?? k,
+        value: v as number,
+        unite: (service.tarifs as Record<string, unknown>).unite as string ?? 'EUR',
+      }))
+  : [];
+---
+
+<Layout {title} {description} {canonical} {schemas} {callTrackingSlug}>
+  <main class="max-w-4xl mx-auto px-4 py-8">
+
+    <!-- Breadcrumb -->
+    <Breadcrumb items={breadcrumbs} />
+
+    <!-- H1 -->
+    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">
+      {service.label} a {commune.name}
+      <span class="text-brand-600"> ({commune.cp[0]})</span>
+    </h1>
+
+    <!-- Accroche -->
+    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+      Trouvez un artisan agree pour votre {service.label.toLowerCase()} a {commune.name}.
+      Devis gratuit, intervention rapide, professionnels certifies en Essonne (91).
+    </p>
+
+    <!-- CTA Urgence -->
+    {service.urgence && (
+      <div class="bg-urgence-50 border border-urgence-200 rounded-xl p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex-1">
+          <p class="font-bold text-urgence-900">Urgence {service.label} a {commune.name}</p>
+          <p class="text-urgence-700 text-sm mt-0.5">Disponible 24h/24 et 7j/7 — intervention rapide</p>
+        </div>
+        <a
+          href={`/track/appel/${callTrackingSlug}/`}
+          class="inline-flex items-center gap-2 bg-urgence-600 hover:bg-urgence-700 text-white font-bold px-6 py-3 rounded-lg transition-colors whitespace-nowrap"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/>
+          </svg>
+          Appeler maintenant
+        </a>
+      </div>
+    )}
+
+    <!-- Tarifs -->
+    {tarifLines.length > 0 && (
+      <section class="mb-10">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">
+          Tarifs {service.label.toLowerCase()} a {commune.name}
+        </h2>
+        <div class="bg-gray-50 rounded-xl p-6">
+          <p class="text-gray-600 text-sm mb-4">
+            Tarifs indicatifs constates en Essonne (91). Demandez un devis gratuit pour une estimation precise.
+          </p>
+          <ul class="divide-y divide-gray-200">
+            {tarifLines.map(t => (
+              <li class="flex justify-between items-center py-3 text-sm">
+                <span class="text-gray-600">{t.label}</span>
+                <span class="font-semibold text-gray-900">{t.value} {t.unite}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <!-- Pourquoi un professionnel agree -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">
+        Pourquoi choisir un artisan agree pour votre {service.label.toLowerCase()} a {commune.name} ?
+      </h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        A {commune.name} ({commune.cp[0]}), faire appel a un professionnel agree par la Prefecture
+        de l'Essonne garantit une intervention conforme a la reglementation. Nos artisans partenaires
+        disposent tous de l'agrement prefectoral, d'une assurance responsabilite civile professionnelle
+        et d'un equipement aux normes en vigueur.
+      </p>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li class="flex items-start gap-2">
+          <svg class="h-4 w-4 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Agrement prefectoral valide pour le transport de matieres de vidange
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="h-4 w-4 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Assurance RC pro et garantie decennale
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="h-4 w-4 text-brand-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Devis gratuit et transparent avant toute intervention
+        </li>
+      </ul>
+    </section>
+
+    <!-- SPANC (Sud Essonne seulement) -->
+    {spanc && (
+      <section class="mb-10 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <h2 class="text-lg font-bold text-blue-900 mb-3">
+          SPANC de {commune.name} — {spanc.name}
+        </h2>
+        <p class="text-blue-800 text-sm mb-4 leading-relaxed">
+          L'assainissement non collectif a {commune.name} est controle par le {spanc.name}.
+          Tout systeme d'assainissement individuel doit faire l'objet d'un diagnostic conforme.
+        </p>
+        {spanc.contact?.tel && (
+          <p class="text-sm text-blue-700">
+            Contact SPANC :
+            <a href={`tel:${spanc.contact.tel}`} class="font-semibold hover:underline ml-1">
+              {spanc.contact.tel}
+            </a>
+          </p>
+        )}
+      </section>
+    )}
+
+    <!-- FAQ -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-900 mb-5">
+        Questions frequentes &mdash; {service.label} a {commune.name}
+      </h2>
+      <div class="space-y-3">
+        {faqItems.map((item, i) => (
+          <details class="group border border-gray-200 rounded-xl overflow-hidden" open={i === 0}>
+            <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors list-none">
+              <span class="font-medium text-gray-900 pr-4 text-sm">{item.question}</span>
+              <svg class="h-4 w-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+              {item.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Maillage interne : communes adjacentes -->
+    <InternalLinks commune={commune} service={service} zone={zone} />
+
+  </main>
+</Layout>

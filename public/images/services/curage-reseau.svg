@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <rect width="400" height="200" fill="#F0FDF4"/>
+  <circle cx="200" cy="100" r="60" fill="#BBF7D0" opacity="0.5"/>
+  <path d="M120 100 Q160 80 200 100 Q240 120 280 100" stroke="#16A34A" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="120" cy="100" r="8" fill="#22C55E"/>
+  <circle cx="280" cy="100" r="8" fill="#22C55E"/>
+  <path d="M200 70 L200 130" stroke="#4ADE80" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="200" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#14532D" font-weight="600">Curage de Reseau</text>
+</svg>

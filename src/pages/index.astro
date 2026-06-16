@@ -1,0 +1,457 @@
+---
+import Layout from '../layouts/Layout.astro';
+import knowledgeMap from '../../data/knowledge_map.json';
+
+const siteUrl = knowledgeMap._meta.department.siteUrl;
+const communeCount = knowledgeMap.communes.length;
+const nordCount    = knowledgeMap.communes.filter(c => c.zone === 'nord').length;
+const sudCount     = knowledgeMap.communes.filter(c => c.zone === 'sud').length;
+
+// ── JSON-LD : WebSite ─────────────────────────────────────────────────────────
+const schemaWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Débouchage Essonne",
+  "url": siteUrl,
+  "description": "Annuaire des artisans agréés en assainissement dans l'Essonne (91). Débouchage urgence, vidange fosse septique, curage réseau, inspection caméra.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${siteUrl}/debouchage-urgence/nord-essonne/{commune}/`,
+    "query-input": "required name=commune"
+  }
+};
+
+// ── JSON-LD : LocalBusiness (l'annuaire lui-même) ────────────────────────────
+const schemaBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Débouchage Essonne — Annuaire Agréé",
+  "url": siteUrl,
+  "description": "Annuaire des professionnels agréés de l'assainissement en Essonne (91).",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Essonne",
+    "identifier": "91"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.63, "longitude": 2.28 },
+    "geoRadius": "45000"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+};
+
+// ── JSON-LD : FAQPage ─────────────────────────────────────────────────────────
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quel est le prix d'un débouchage de canalisation en Essonne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le tarif d'un débouchage varie entre 80 € et 250 € HT selon la complexité. Un devis gratuit et sans engagement est systématiquement proposé par les artisans de notre annuaire avant toute intervention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment trouver un plombier agréé disponible en urgence dans l'Essonne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre annuaire référence uniquement des artisans certifiés, disponibles 24h/24 et 7j/7 dans toutes les communes de l'Essonne (91). Sélectionnez votre commune pour obtenir les coordonnées d'un professionnel de proximité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quand faut-il vider une fosse septique en Essonne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La réglementation impose une vidange tous les 4 ans minimum (contrôle SPANC obligatoire). En pratique, dès que les matières représentent 50 % du volume de la fosse, une vidange est recommandée pour éviter les dysfonctionnements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment reconnaître un artisan sérieux et éviter les arnaques en assainissement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vérifiez l'agrément préfectoral pour le transport de matières de vidange, l'assurance responsabilité civile professionnelle et la présence d'avis clients vérifiés. Méfiez-vous de tout devis téléphonique sans visite préalable, et refusez tout paiement en espèces sur la totalité du montant."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Débouchage Essonne (91) — Artisans Agréés 24h/7j | debouchage-essonne.fr"
+  description="Trouvez un artisan agréé pour votre débouchage ou assainissement en Essonne (91). Intervention urgence 24h/7j. Devis gratuit. 148 communes couvertes."
+  canonical={siteUrl + '/'}
+  schemas={[schemaWebSite, schemaBusiness, schemaFAQ]}
+>
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       ZONE 1 — HÉRO URGENCE (PANIC BUYING)
+       ════════════════════════════════════════════════════════════════════════ -->
+  <section class="bg-urgence-600 text-white">
+    <div class="max-w-5xl mx-auto px-4 py-10 md:py-14">
+
+      <!-- Badge urgence -->
+      <div class="flex items-center gap-2 mb-4">
+        <span class="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+          Disponible maintenant — 24h / 7j
+        </span>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 max-w-3xl">
+        Débouchage en Essonne&nbsp;(91)<br/>
+        <span class="text-urgence-200">Artisan agréé en urgence</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-urgence-100 mb-8 max-w-2xl leading-relaxed">
+        Canalisation bouchée, fosse pleine, refoulement&nbsp;? Nos artisans certifiés
+        interviennent dans toutes les communes de l'Essonne, de jour comme de nuit.
+      </p>
+
+      <!-- CTA double -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/track/appel/homepage/hero/"
+          class="inline-flex items-center justify-center gap-2 bg-white text-urgence-700 hover:bg-urgence-50 font-bold px-6 py-4 rounded-xl transition-colors text-lg shadow-lg"
+          aria-label="Appeler un artisan agréé — urgence assainissement Essonne 24h/7j"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/>
+          </svg>
+          Appeler un artisan maintenant
+        </a>
+        <a
+          href="/debouchage-urgence/"
+          class="inline-flex items-center justify-center gap-2 bg-urgence-700 hover:bg-urgence-800 text-white font-semibold px-6 py-4 rounded-xl transition-colors text-base border border-urgence-500"
+        >
+          Trouver par commune
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Preuves sociales rapides -->
+      <div class="mt-8 flex flex-wrap gap-4 text-urgence-100 text-sm">
+        <span class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-urgence-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Devis gratuit avant intervention
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-urgence-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Agrément préfectoral vérifié
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-urgence-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          {communeCount} communes couvertes
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-urgence-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Assurance RC pro obligatoire
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-4">
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+         ZONE 2 — GUIDAGE GÉOGRAPHIQUE (HUB DES ZONES)
+         ════════════════════════════════════════════════════════════════════════ -->
+    <section class="py-12 border-b border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">
+        Sélectionnez votre zone en Essonne
+      </h2>
+      <p class="text-gray-500 text-sm mb-8">
+        L'Essonne compte deux profils d'assainissement distincts. Choisissez votre secteur
+        pour accéder aux artisans les plus proches.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+
+        <!-- NORD ESSONNE -->
+        <a
+          href="/debouchage-urgence/nord-essonne/"
+          class="group relative block border-2 border-brand-200 hover:border-brand-500 bg-white hover:bg-brand-50 rounded-2xl p-6 transition-all shadow-sm hover:shadow-md"
+        >
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Réseau collectif</span>
+              <h3 class="text-xl font-bold text-gray-900 mt-0.5 group-hover:text-brand-700">
+                Nord Essonne
+              </h3>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-400 group-hover:text-brand-600 transition-colors mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Évry-Courcouronnes, Massy, Palaiseau, Corbeil-Essonnes, Les Ulis&hellip;
+            Zone urbaine raccordée au tout-à-l'égout.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-brand-100 text-brand-700 px-2 py-0.5 rounded-full font-medium">Débouchage urgence</span>
+            <span class="text-xs bg-brand-100 text-brand-700 px-2 py-0.5 rounded-full font-medium">Curage réseau</span>
+            <span class="text-xs bg-brand-100 text-brand-700 px-2 py-0.5 rounded-full font-medium">Inspection caméra</span>
+          </div>
+          <p class="mt-3 text-xs text-gray-400">{nordCount} communes couvertes</p>
+        </a>
+
+        <!-- SUD ESSONNE -->
+        <a
+          href="/vidange-fosse-septique/sud-essonne/"
+          class="group relative block border-2 border-green-200 hover:border-green-500 bg-white hover:bg-green-50 rounded-2xl p-6 transition-all shadow-sm hover:shadow-md"
+        >
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Assainissement non-collectif</span>
+              <h3 class="text-xl font-bold text-gray-900 mt-0.5 group-hover:text-green-700">
+                Sud Essonne
+              </h3>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 group-hover:text-green-600 transition-colors mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Étampes, Dourdan, Milly-la-Forêt, La Ferté-Alais&hellip;
+            Zone rurale avec fosses septiques et micro-stations.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Vidange fosse septique</span>
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Contrôle SPANC</span>
+          </div>
+          <p class="mt-3 text-xs text-gray-400">{sudCount} communes couvertes</p>
+        </a>
+
+      </div>
+
+      <!-- Grille des 5 services -->
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Tous nos services en Essonne</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {Object.values(knowledgeMap.services).map(svc => (
+          <a
+            href={`/${svc.slug}/`}
+            class={`flex items-center gap-3 p-4 rounded-xl border transition-all hover:shadow-sm ${
+              svc.urgence
+                ? 'border-urgence-200 bg-urgence-50 hover:border-urgence-400'
+                : 'border-gray-200 bg-gray-50 hover:border-brand-300'
+            }`}
+          >
+            <div class="flex-1 min-w-0">
+              <p class={`font-semibold text-sm truncate ${svc.urgence ? 'text-urgence-800' : 'text-brand-800'}`}>
+                {svc.label}
+              </p>
+              <p class="text-xs text-gray-500 mt-0.5 line-clamp-1">{svc.description}</p>
+            </div>
+            {svc.urgence && (
+              <span class="flex-shrink-0 bg-urgence-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">
+                24h
+              </span>
+            )}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+         ZONE 3 — CHARTE D'AUTORITÉ (EEAT)
+         ════════════════════════════════════════════════════════════════════════ -->
+    <section class="py-12 border-b border-gray-100">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">
+          Un annuaire de confiance pour l'assainissement en Essonne
+        </h2>
+        <p class="text-gray-500 text-sm mb-8">
+          Pourquoi choisir debouchage-essonne.fr plutôt qu'un moteur de recherche généraliste ?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <div class="w-10 h-10 bg-brand-100 rounded-lg flex items-center justify-center mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2 text-sm">Artisans vérifiés et agréés</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Chaque professionnel référencé dispose de l'agrément préfectoral pour
+            le transport de matières de vidange (arrêté du 7 septembre 2009),
+            d'une assurance RC pro à jour et d'un véhicule homologué.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <div class="w-10 h-10 bg-urgence-100 rounded-lg flex items-center justify-center mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-urgence-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2 text-sm">Tarifs transparents</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Fourchettes de prix indicatives affichées pour chaque type de prestation.
+            Devis gratuit et sans engagement avant toute intervention.
+            Paiement en espèces sur la totalité de la facture : signal d'alerte.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2 text-sm">Lutte contre les arnaques</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            L'Essonne est une zone à forte pression de démarchage abusif.
+            Notre sélection exclut tout artisan signalé pour devis gonfflé,
+            intervention non sollicitée ou pression commerciale.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bloc éditorial EEAT -->
+      <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 max-w-3xl">
+        <h3 class="font-bold text-gray-900 mb-3 text-base">
+          Notre méthode de sélection des artisans
+        </h3>
+        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+          Nous ne référençons pas tous les professionnels qui en font la demande.
+          Chaque artisan candidat est soumis à une vérification en quatre étapes&nbsp;:
+          contrôle de l'agrément préfectoral en cours de validité, vérification de
+          l'attestation d'assurance RC pro, analyse des avis clients sur des plateformes
+          indépendantes (Google, Pages Jaunes) et contrôle terrain par simulation de
+          demande de devis.
+        </p>
+        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+          Nous couvrons l'intégralité du département de l'Essonne&nbsp;: des communes
+          densément urbanisées du Nord (Grand Paris Sud, plateau de Saclay) aux bourgs
+          ruraux du Gâtinais et de la Beauce au Sud, où l'assainissement non-collectif
+          reste la norme et où la réglementation SPANC s'applique.
+        </p>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          <strong>Mise à jour des données&nbsp;:</strong> les informations tarifaires
+          et les coordonnées artisans sont vérifiées trimestriellement.
+          Toute anomalie peut être signalée via notre formulaire de contact.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+         FAQ — Double signal EEAT + Schema FAQPage
+         ════════════════════════════════════════════════════════════════════════ -->
+    <section class="py-12 border-b border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Questions fréquentes</h2>
+      <div class="max-w-3xl space-y-3">
+
+        <details class="group border border-gray-200 rounded-xl overflow-hidden" open>
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors list-none">
+            <span class="font-medium text-gray-900 text-sm pr-4">Quel est le prix d'un débouchage de canalisation en Essonne&nbsp;?</span>
+            <svg class="h-4 w-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-4 pb-4 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            Le tarif d'un débouchage varie entre <strong>80 € et 250 € HT</strong> selon la complexité
+            et la technique utilisée (ventouse, furet, hydro-curage). Un devis gratuit et sans engagement
+            est systématiquement proposé avant toute intervention par les artisans de notre annuaire.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors list-none">
+            <span class="font-medium text-gray-900 text-sm pr-4">Comment trouver un plombier agréé disponible en urgence dans l'Essonne&nbsp;?</span>
+            <svg class="h-4 w-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-4 pb-4 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            Notre annuaire référence uniquement des artisans certifiés, disponibles 24h/24 et 7j/7.
+            Sélectionnez votre commune dans la section <a href="/debouchage-urgence/" class="text-brand-600 hover:underline">débouchage urgence</a>
+            pour obtenir les coordonnées d'un professionnel de proximité en Essonne.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors list-none">
+            <span class="font-medium text-gray-900 text-sm pr-4">Quand faut-il vider une fosse septique en Essonne&nbsp;?</span>
+            <svg class="h-4 w-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-4 pb-4 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            La réglementation impose une vidange tous les <strong>4 ans minimum</strong> avec contrôle SPANC obligatoire
+            (arrêté du 27 avril 2012). En pratique, dès que les matières représentent 50 % du volume de la fosse,
+            une vidange est recommandée. Consultez notre page <a href="/vidange-fosse-septique/sud-essonne/" class="text-brand-600 hover:underline">vidange fosse septique Sud Essonne</a>.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors list-none">
+            <span class="font-medium text-gray-900 text-sm pr-4">Comment reconnaître un artisan sérieux et éviter les arnaques en assainissement&nbsp;?</span>
+            <svg class="h-4 w-4 text-gray-400 flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-4 pb-4 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+            Vérifiez l'<strong>agrément préfectoral</strong> pour le transport de matières de vidange,
+            l'<strong>assurance RC pro</strong> et la présence d'avis clients vérifiés.
+            Méfiez-vous de tout devis téléphonique sans visite préalable, et refusez tout paiement
+            en espèces sur la totalité du montant.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-12">
+      <div class="bg-brand-900 rounded-2xl p-8 text-center text-white">
+        <h2 class="text-2xl font-bold mb-2">Besoin d'un professionnel maintenant&nbsp;?</h2>
+        <p class="text-brand-200 mb-6 text-sm max-w-md mx-auto">
+          Disponible 24h/24 et 7j/7 dans toute l'Essonne (91).
+          Devis gratuit, artisans agréés, intervention rapide.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/track/appel/homepage/cta-final/"
+            class="inline-flex items-center justify-center gap-2 bg-urgence-500 hover:bg-urgence-400 text-white font-bold px-8 py-3 rounded-xl transition-colors text-lg"
+          >
+            Appeler maintenant
+          </a>
+          <a
+            href="/debouchage-urgence/"
+            class="inline-flex items-center justify-center gap-2 bg-brand-700 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-xl transition-colors"
+          >
+            Chercher par commune
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</Layout>

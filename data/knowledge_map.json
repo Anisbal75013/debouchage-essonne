@@ -1,0 +1,4628 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "lastSync": "2026-06-15T22:41:58Z",
+    "seedOnly": true,
+    "communeCount": 148,
+    "description": "Cerveau de données unique du projet. NE PAS EDITER MANUELLEMENT — utiliser scripts/sync_knowledge.py",
+    "department": {
+      "code": "91",
+      "name": "Essonne",
+      "region": "Île-de-France",
+      "prefecture": "Évry-Courcouronnes",
+      "siteUrl": "https://www.debouchage-essonne.fr"
+    }
+  },
+  "zones": {
+    "nord": {
+      "slug": "nord-essonne",
+      "label": "Nord Essonne",
+      "profile": "urbain-collectif",
+      "description": "Zone urbaine et périurbaine majoritairement raccordée au tout-à-l'égout. Forte densité, urgences fréquentes.",
+      "primaryServices": [
+        "debouchage-urgence",
+        "curage-reseau",
+        "inspection-camera"
+      ],
+      "seoFocus": "urgence débouchage canalisation",
+      "communes": [
+        "evry-courcouronnes",
+        "massy",
+        "palaiseau"
+      ]
+    },
+    "sud": {
+      "slug": "sud-essonne",
+      "label": "Sud Essonne",
+      "profile": "rural-non-collectif",
+      "description": "Zone rurale et semi-rurale avec forte proportion de fosses septiques et micro-stations. Contrôles SPANC obligatoires.",
+      "primaryServices": [
+        "vidange-fosse-septique",
+        "spanc-essonne"
+      ],
+      "seoFocus": "vidange fosse septique contrôle SPANC",
+      "communes": [
+        "etampes",
+        "dourdan",
+        "milly-la-foret"
+      ]
+    }
+  },
+  "communes": [
+    {
+      "slug": "evry-courcouronnes",
+      "name": "Évry-Courcouronnes",
+      "nameShort": "Évry",
+      "insee": "91228",
+      "cp": [
+        "91000",
+        "91080"
+      ],
+      "zone": "nord",
+      "population": 64000,
+      "geo": {
+        "lat": 48.6281,
+        "lng": 2.4281
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "ris-orangis",
+        "bondoufle",
+        "courcouronnes"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 320,
+        "titleDebouchage": "Débouchage Urgence Évry-Courcouronnes (91) — Intervention 24h/7j",
+        "titleVidange": null,
+        "metaDescription": "Débouchage de canalisation en urgence à Évry-Courcouronnes (91000). Artisans agréés, intervention rapide, devis gratuit. WC bouché, évier, canalisation bouchée."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "massy",
+      "name": "Massy",
+      "nameShort": "Massy",
+      "insee": "91377",
+      "cp": [
+        "91300"
+      ],
+      "zone": "nord",
+      "population": 43000,
+      "geo": {
+        "lat": 48.7303,
+        "lng": 2.2715
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "palaiseau",
+        "verrières-le-buisson",
+        "antony",
+        "wissous"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 210,
+        "titleDebouchage": "Débouchage Canalisation Massy (91300) — Plombier Assainissement Urgent",
+        "titleVidange": null,
+        "metaDescription": "Débouchage et curage à Massy (91300). Professionnels certifiés, hydrocurage haute pression. Intervention express dans toute la commune."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "palaiseau",
+      "name": "Palaiseau",
+      "nameShort": "Palaiseau",
+      "insee": "91477",
+      "cp": [
+        "91120"
+      ],
+      "zone": "nord",
+      "population": 33000,
+      "geo": {
+        "lat": 48.7153,
+        "lng": 2.2459
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "massy",
+        "les-ulis",
+        "orsay",
+        "villebon-sur-yvette"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 150,
+        "titleDebouchage": "Débouchage & Assainissement Palaiseau (91120) — Artisans Certifiés",
+        "titleVidange": null,
+        "metaDescription": "Artisans en assainissement à Palaiseau (91120). Débouchage, curage, inspection caméra. Devis gratuit, intervention rapide."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "etampes",
+      "name": "Étampes",
+      "nameShort": "Étampes",
+      "insee": "91226",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 24000,
+      "geo": {
+        "lat": 48.4356,
+        "lng": 2.1611
+      },
+      "assainissement": "mixte",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "guillerval",
+        "ormoy-la-riviere",
+        "morigny-champigny",
+        "saclas"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Canalisation Étampes (91150)",
+        "titleVidange": "Vidange Fosse Septique Étampes (91150) — Artisans Agréés SPANC",
+        "metaDescription": "Vidange de fosse septique et assainissement non-collectif à Étampes (91150). Entreprises agréées préfecture, conformité SPANC. Fosse toutes eaux, micro-station."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "dourdan",
+      "name": "Dourdan",
+      "nameShort": "Dourdan",
+      "insee": "91201",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 9500,
+      "geo": {
+        "lat": 48.5283,
+        "lng": 2.0139
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "saint-cheron",
+        "brieres-les-scelles",
+        "corbreuse"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 90,
+        "titleDebouchage": "Débouchage Dourdan (91410)",
+        "titleVidange": "Vidange Fosse Septique Dourdan (91410) — Devis Gratuit",
+        "metaDescription": "Vidange fosse septique et assainissement non-collectif à Dourdan (91410). Contrôle SPANC, vidange toutes eaux, micro-station d'épuration. Artisans agréés 91."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "milly-la-foret",
+      "name": "Milly-la-Forêt",
+      "nameShort": "Milly",
+      "insee": "91399",
+      "cp": [
+        "91490"
+      ],
+      "zone": "sud",
+      "population": 5000,
+      "geo": {
+        "lat": 48.4014,
+        "lng": 2.4686
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "oncy-sur-ecole",
+        "courances",
+        "moigny-sur-ecole"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 60,
+        "titleDebouchage": "Débouchage Milly-la-Forêt (91490)",
+        "titleVidange": "Vidange Fosse Septique Milly-la-Forêt (91490) — Intervention Rapide",
+        "metaDescription": "Assainissement non-collectif à Milly-la-Forêt (91490). Vidange fosse septique, contrôle conformité SPANC Coeur d'Essonne. Entreprises agréées préfecture 91."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "arpajon",
+      "name": "Arpajon",
+      "insee": "91026",
+      "cp": [
+        "91290"
+      ],
+      "zone": "nord",
+      "population": 10500,
+      "geo": {
+        "lat": 48.5932,
+        "lng": 2.2478
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "saint-germain-les-arpajon",
+        "egly",
+        "la-norville",
+        "breuillet",
+        "marolles-en-hurepoix"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Arpajon (91290) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Arpajon (91290). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "athis-mons",
+      "name": "Athis-Mons",
+      "insee": "91027",
+      "cp": [
+        "91200"
+      ],
+      "zone": "nord",
+      "population": 33500,
+      "geo": {
+        "lat": 48.7062,
+        "lng": 2.3869
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "juvisy-sur-orge",
+        "viry-chatillon",
+        "morangis",
+        "savigny-sur-orge"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 250,
+        "titleDebouchage": "Débouchage Athis-Mons (91200) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Athis-Mons (91200). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "ballainvilliers",
+      "name": "Ballainvilliers",
+      "insee": "91042",
+      "cp": [
+        "91160"
+      ],
+      "zone": "nord",
+      "population": 5000,
+      "geo": {
+        "lat": 48.6567,
+        "lng": 2.2844
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "longjumeau",
+        "massy",
+        "chilly-mazarin",
+        "saulx-les-chartreux"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Ballainvilliers (91160) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Ballainvilliers (91160). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "ballancourt-sur-essonne",
+      "name": "Ballancourt-sur-Essonne",
+      "insee": "91037",
+      "cp": [
+        "91610"
+      ],
+      "zone": "nord",
+      "population": 9000,
+      "geo": {
+        "lat": 48.5389,
+        "lng": 2.39
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "itteville",
+        "mennecy",
+        "vert-le-petit"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Ballancourt-sur-Essonne (91610) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Ballancourt-sur-Essonne (91610). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "bondoufle",
+      "name": "Bondoufle",
+      "insee": "91076",
+      "cp": [
+        "91070"
+      ],
+      "zone": "nord",
+      "population": 11000,
+      "geo": {
+        "lat": 48.61,
+        "lng": 2.4736
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "evry-courcouronnes",
+        "lisses",
+        "ris-orangis"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Bondoufle (91070) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Bondoufle (91070). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "boissy-sous-saint-yon",
+      "name": "Boissy-sous-Saint-Yon",
+      "insee": "91062",
+      "cp": [
+        "91790"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.5692,
+        "lng": 2.2264
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "arpajon",
+        "saint-yon",
+        "breuillet"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Boissy-sous-Saint-Yon (91790) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Boissy-sous-Saint-Yon (91790). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "bretigny-sur-orge",
+      "name": "Brétigny-sur-Orge",
+      "insee": "91087",
+      "cp": [
+        "91220"
+      ],
+      "zone": "nord",
+      "population": 27000,
+      "geo": {
+        "lat": 48.6045,
+        "lng": 2.3048
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "saint-germain-les-arpajon",
+        "le-plessis-pate",
+        "egly",
+        "saint-michel-sur-orge"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Brétigny-sur-Orge (91220) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Brétigny-sur-Orge (91220). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "breuillet",
+      "name": "Breuillet",
+      "insee": "91093",
+      "cp": [
+        "91650"
+      ],
+      "zone": "nord",
+      "population": 9000,
+      "geo": {
+        "lat": 48.568,
+        "lng": 2.215
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "arpajon",
+        "boissy-sous-saint-yon",
+        "la-norville",
+        "saint-yon"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Breuillet (91650) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Breuillet (91650). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "brunoy",
+      "name": "Brunoy",
+      "insee": "91099",
+      "cp": [
+        "91800"
+      ],
+      "zone": "nord",
+      "population": 27000,
+      "geo": {
+        "lat": 48.6975,
+        "lng": 2.5092
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "yerres",
+        "quincy-sous-senat",
+        "varennes-jarcy",
+        "montgeron"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Brunoy (91800) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Brunoy (91800). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "bures-sur-yvette",
+      "name": "Bures-sur-Yvette",
+      "insee": "91102",
+      "cp": [
+        "91440"
+      ],
+      "zone": "nord",
+      "population": 10200,
+      "geo": {
+        "lat": 48.6997,
+        "lng": 2.1617
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "gif-sur-yvette",
+        "orsay",
+        "les-ulis"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Bures-sur-Yvette (91440) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Bures-sur-Yvette (91440). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "champlan",
+      "name": "Champlan",
+      "insee": "91107",
+      "cp": [
+        "91160"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.6819,
+        "lng": 2.2975
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "longjumeau",
+        "massy",
+        "chilly-mazarin"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Champlan (91160) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Champlan (91160). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "chilly-mazarin",
+      "name": "Chilly-Mazarin",
+      "insee": "91129",
+      "cp": [
+        "91380"
+      ],
+      "zone": "nord",
+      "population": 22000,
+      "geo": {
+        "lat": 48.69,
+        "lng": 2.3186
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "longjumeau",
+        "ballainvilliers",
+        "massy",
+        "wissous",
+        "champlan"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Chilly-Mazarin (91380) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Chilly-Mazarin (91380). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "corbeil-essonnes",
+      "name": "Corbeil-Essonnes",
+      "insee": "91174",
+      "cp": [
+        "91100"
+      ],
+      "zone": "nord",
+      "population": 50000,
+      "geo": {
+        "lat": 48.6153,
+        "lng": 2.4806
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "evry-courcouronnes",
+        "ris-orangis",
+        "lisses",
+        "villabe",
+        "saint-germain-les-corbeil"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 400,
+        "titleDebouchage": "Débouchage Corbeil-Essonnes (91100) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Corbeil-Essonnes (91100). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "crosne",
+      "name": "Crosne",
+      "insee": "91185",
+      "cp": [
+        "91560"
+      ],
+      "zone": "nord",
+      "population": 10000,
+      "geo": {
+        "lat": 48.7175,
+        "lng": 2.4636
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "yerres",
+        "montgeron",
+        "epinay-sous-senat"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Crosne (91560) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Crosne (91560). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "draveil",
+      "name": "Draveil",
+      "insee": "91210",
+      "cp": [
+        "91210"
+      ],
+      "zone": "nord",
+      "population": 30000,
+      "geo": {
+        "lat": 48.6847,
+        "lng": 2.4164
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "vigneux-sur-seine",
+        "soisy-sur-seine",
+        "ris-orangis"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 250,
+        "titleDebouchage": "Débouchage Draveil (91210) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Draveil (91210). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "egly",
+      "name": "Égly",
+      "insee": "91197",
+      "cp": [
+        "91520"
+      ],
+      "zone": "nord",
+      "population": 5000,
+      "geo": {
+        "lat": 48.5761,
+        "lng": 2.2544
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "arpajon",
+        "bretigny-sur-orge",
+        "la-norville",
+        "saint-germain-les-arpajon"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Égly (91520) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Égly (91520). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "epinay-sous-senart",
+      "name": "Épinay-sous-Sénart",
+      "insee": "91206",
+      "cp": [
+        "91860"
+      ],
+      "zone": "nord",
+      "population": 14000,
+      "geo": {
+        "lat": 48.6908,
+        "lng": 2.5283
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "crosne",
+        "quincy-sous-senat",
+        "yerres"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Épinay-sous-Sénart (91860) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Épinay-sous-Sénart (91860). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "epinay-sur-orge",
+      "name": "Épinay-sur-Orge",
+      "insee": "91207",
+      "cp": [
+        "91360"
+      ],
+      "zone": "nord",
+      "population": 9500,
+      "geo": {
+        "lat": 48.6547,
+        "lng": 2.3117
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "savigny-sur-orge",
+        "villemoisson-sur-orge",
+        "morsang-sur-orge"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Épinay-sur-Orge (91360) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Épinay-sur-Orge (91360). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "etiolles",
+      "name": "Étiolles",
+      "insee": "91224",
+      "cp": [
+        "91450"
+      ],
+      "zone": "nord",
+      "population": 3000,
+      "geo": {
+        "lat": 48.6264,
+        "lng": 2.4636
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "soisy-sur-seine",
+        "corbeil-essonnes",
+        "saint-germain-les-corbeil"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Étiolles (91450) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Étiolles (91450). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "fleury-merogis",
+      "name": "Fleury-Mérogis",
+      "insee": "91240",
+      "cp": [
+        "91700"
+      ],
+      "zone": "nord",
+      "population": 10500,
+      "geo": {
+        "lat": 48.6397,
+        "lng": 2.3697
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "sainte-genevieve-des-bois",
+        "lisses",
+        "ris-orangis"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Fleury-Mérogis (91700) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Fleury-Mérogis (91700). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "gif-sur-yvette",
+      "name": "Gif-sur-Yvette",
+      "insee": "91272",
+      "cp": [
+        "91190"
+      ],
+      "zone": "nord",
+      "population": 22000,
+      "geo": {
+        "lat": 48.7036,
+        "lng": 2.1361
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "bures-sur-yvette",
+        "orsay",
+        "saclay",
+        "saint-jean-de-beauregard"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Gif-sur-Yvette (91190) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Gif-sur-Yvette (91190). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "grigny",
+      "name": "Grigny",
+      "insee": "91286",
+      "cp": [
+        "91350"
+      ],
+      "zone": "nord",
+      "population": 30000,
+      "geo": {
+        "lat": 48.6542,
+        "lng": 2.3906
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "viry-chatillon",
+        "ris-orangis",
+        "evry-courcouronnes"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 250,
+        "titleDebouchage": "Débouchage Grigny (91350) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Grigny (91350). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "igny",
+      "name": "Igny",
+      "insee": "91307",
+      "cp": [
+        "91430"
+      ],
+      "zone": "nord",
+      "population": 10000,
+      "geo": {
+        "lat": 48.7378,
+        "lng": 2.2272
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "gif-sur-yvette",
+        "verrieres-le-buisson",
+        "palaiseau",
+        "bures-sur-yvette"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Igny (91430) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Igny (91430). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "juvisy-sur-orge",
+      "name": "Juvisy-sur-Orge",
+      "insee": "91326",
+      "cp": [
+        "91260"
+      ],
+      "zone": "nord",
+      "population": 14000,
+      "geo": {
+        "lat": 48.6914,
+        "lng": 2.3797
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "athis-mons",
+        "savigny-sur-orge",
+        "morsang-sur-orge",
+        "viry-chatillon"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Juvisy-sur-Orge (91260) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Juvisy-sur-Orge (91260). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "la-norville",
+      "name": "La Norville",
+      "insee": "91339",
+      "cp": [
+        "91290"
+      ],
+      "zone": "nord",
+      "population": 3000,
+      "geo": {
+        "lat": 48.5764,
+        "lng": 2.2208
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "arpajon",
+        "breuillet",
+        "saint-germain-les-arpajon",
+        "egly"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage La Norville (91290) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à La Norville (91290). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "la-ville-du-bois",
+      "name": "La Ville-du-Bois",
+      "insee": "91654",
+      "cp": [
+        "91620"
+      ],
+      "zone": "nord",
+      "population": 8000,
+      "geo": {
+        "lat": 48.6292,
+        "lng": 2.2658
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "nozay",
+        "marcoussis",
+        "montlhery",
+        "linas"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage La Ville-du-Bois (91620) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à La Ville-du-Bois (91620). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "le-coudray-montceaux",
+      "name": "Le Coudray-Montceaux",
+      "insee": "91144",
+      "cp": [
+        "91830"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.5731,
+        "lng": 2.4875
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "soisy-sur-seine",
+        "saint-pierre-du-perray"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Le Coudray-Montceaux (91830) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Le Coudray-Montceaux (91830). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "le-plessis-pate",
+      "name": "Le Plessis-Pâté",
+      "insee": "91489",
+      "cp": [
+        "91220"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.5881,
+        "lng": 2.2919
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "bretigny-sur-orge",
+        "egly",
+        "marolles-en-hurepoix"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Le Plessis-Pâté (91220) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Le Plessis-Pâté (91220). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "les-ulis",
+      "name": "Les Ulis",
+      "insee": "91692",
+      "cp": [
+        "91940"
+      ],
+      "zone": "nord",
+      "population": 26000,
+      "geo": {
+        "lat": 48.6834,
+        "lng": 2.165
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "palaiseau",
+        "bures-sur-yvette",
+        "gif-sur-yvette",
+        "orsay"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Les Ulis (91940) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Les Ulis (91940). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "leuville-sur-orge",
+      "name": "Leuville-sur-Orge",
+      "insee": "91350",
+      "cp": [
+        "91310"
+      ],
+      "zone": "nord",
+      "population": 5000,
+      "geo": {
+        "lat": 48.6175,
+        "lng": 2.2803
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "montlhery",
+        "linas",
+        "longpont-sur-orge"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Leuville-sur-Orge (91310) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Leuville-sur-Orge (91310). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "linas",
+      "name": "Linas",
+      "insee": "91353",
+      "cp": [
+        "91310"
+      ],
+      "zone": "nord",
+      "population": 6500,
+      "geo": {
+        "lat": 48.6317,
+        "lng": 2.2528
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "montlhery",
+        "leuville-sur-orge",
+        "marcoussis",
+        "la-ville-du-bois"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Linas (91310) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Linas (91310). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "lisses",
+      "name": "Lisses",
+      "insee": "91355",
+      "cp": [
+        "91090"
+      ],
+      "zone": "nord",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6003,
+        "lng": 2.4369
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "evry-courcouronnes",
+        "corbeil-essonnes",
+        "fleury-merogis",
+        "bondoufle"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Lisses (91090) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Lisses (91090). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "longjumeau",
+      "name": "Longjumeau",
+      "insee": "91356",
+      "cp": [
+        "91160"
+      ],
+      "zone": "nord",
+      "population": 22000,
+      "geo": {
+        "lat": 48.6942,
+        "lng": 2.2981
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "massy",
+        "chilly-mazarin",
+        "ballainvilliers",
+        "saulx-les-chartreux",
+        "champlan"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Longjumeau (91160) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Longjumeau (91160). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "longpont-sur-orge",
+      "name": "Longpont-sur-Orge",
+      "insee": "91357",
+      "cp": [
+        "91310"
+      ],
+      "zone": "nord",
+      "population": 6000,
+      "geo": {
+        "lat": 48.6453,
+        "lng": 2.2764
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "leuville-sur-orge",
+        "montlhery",
+        "linas"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Longpont-sur-Orge (91310) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Longpont-sur-Orge (91310). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "marcoussis",
+      "name": "Marcoussis",
+      "insee": "91368",
+      "cp": [
+        "91460"
+      ],
+      "zone": "nord",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6458,
+        "lng": 2.2231
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "nozay",
+        "la-ville-du-bois",
+        "linas"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Marcoussis (91460) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Marcoussis (91460). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "marolles-en-hurepoix",
+      "name": "Marolles-en-Hurepoix",
+      "insee": "91369",
+      "cp": [
+        "91630"
+      ],
+      "zone": "nord",
+      "population": 6000,
+      "geo": {
+        "lat": 48.5717,
+        "lng": 2.2889
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "arpajon",
+        "le-plessis-pate",
+        "cheptainville",
+        "leudeville"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Marolles-en-Hurepoix (91630) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Marolles-en-Hurepoix (91630). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "mennecy",
+      "name": "Mennecy",
+      "insee": "91395",
+      "cp": [
+        "91540"
+      ],
+      "zone": "nord",
+      "population": 12000,
+      "geo": {
+        "lat": 48.5814,
+        "lng": 2.4381
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "ballancourt-sur-essonne",
+        "vert-le-petit"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Mennecy (91540) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Mennecy (91540). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "montgeron",
+      "name": "Montgeron",
+      "insee": "91401",
+      "cp": [
+        "91230"
+      ],
+      "zone": "nord",
+      "population": 24000,
+      "geo": {
+        "lat": 48.7061,
+        "lng": 2.4675
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "yerres",
+        "crosne",
+        "vigneux-sur-seine",
+        "draveil"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Montgeron (91230) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Montgeron (91230). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "montlhery",
+      "name": "Montlhéry",
+      "insee": "91402",
+      "cp": [
+        "91310"
+      ],
+      "zone": "nord",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6228,
+        "lng": 2.2736
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "linas",
+        "leuville-sur-orge",
+        "la-ville-du-bois",
+        "longpont-sur-orge"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Montlhéry (91310) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Montlhéry (91310). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "morangis",
+      "name": "Morangis",
+      "insee": "91403",
+      "cp": [
+        "91420"
+      ],
+      "zone": "nord",
+      "population": 13000,
+      "geo": {
+        "lat": 48.7069,
+        "lng": 2.3431
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "athis-mons",
+        "savigny-sur-orge",
+        "juvisy-sur-orge",
+        "wissous"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Morangis (91420) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Morangis (91420). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "morsang-sur-orge",
+      "name": "Morsang-sur-Orge",
+      "insee": "91404",
+      "cp": [
+        "91390"
+      ],
+      "zone": "nord",
+      "population": 22000,
+      "geo": {
+        "lat": 48.6614,
+        "lng": 2.3442
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "sainte-genevieve-des-bois",
+        "saint-michel-sur-orge",
+        "savigny-sur-orge",
+        "epinay-sur-orge"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Morsang-sur-Orge (91390) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Morsang-sur-Orge (91390). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "morsang-sur-seine",
+      "name": "Morsang-sur-Seine",
+      "insee": "91405",
+      "cp": [
+        "91250"
+      ],
+      "zone": "nord",
+      "population": 5000,
+      "geo": {
+        "lat": 48.6314,
+        "lng": 2.4897
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "saintry-sur-seine",
+        "soisy-sur-seine",
+        "saint-germain-les-corbeil"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Morsang-sur-Seine (91250) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Morsang-sur-Seine (91250). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "nozay",
+      "name": "Nozay",
+      "insee": "91459",
+      "cp": [
+        "91620"
+      ],
+      "zone": "nord",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6578,
+        "lng": 2.2158
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "marcoussis",
+        "la-ville-du-bois",
+        "gif-sur-yvette"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Nozay (91620) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Nozay (91620). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "ollainville",
+      "name": "Ollainville",
+      "insee": "91464",
+      "cp": [
+        "91520"
+      ],
+      "zone": "nord",
+      "population": 5500,
+      "geo": {
+        "lat": 48.5633,
+        "lng": 2.2256
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "breuillet",
+        "arpajon",
+        "saint-cheron",
+        "boissy-sous-saint-yon"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Ollainville (91520) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Ollainville (91520). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "orsay",
+      "name": "Orsay",
+      "insee": "91471",
+      "cp": [
+        "91400"
+      ],
+      "zone": "nord",
+      "population": 17000,
+      "geo": {
+        "lat": 48.6994,
+        "lng": 2.1875
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "gif-sur-yvette",
+        "palaiseau",
+        "bures-sur-yvette",
+        "les-ulis"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Orsay (91400) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Orsay (91400). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "quincy-sous-senart",
+      "name": "Quincy-sous-Sénart",
+      "insee": "91508",
+      "cp": [
+        "91480"
+      ],
+      "zone": "nord",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6858,
+        "lng": 2.5428
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "brunoy",
+        "epinay-sous-senat",
+        "varennes-jarcy"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Quincy-sous-Sénart (91480) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Quincy-sous-Sénart (91480). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "ris-orangis",
+      "name": "Ris-Orangis",
+      "insee": "91520",
+      "cp": [
+        "91130"
+      ],
+      "zone": "nord",
+      "population": 26000,
+      "geo": {
+        "lat": 48.6489,
+        "lng": 2.4194
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "evry-courcouronnes",
+        "corbeil-essonnes",
+        "grigny",
+        "draveil",
+        "bondoufle"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Ris-Orangis (91130) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Ris-Orangis (91130). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saclay",
+      "name": "Saclay",
+      "insee": "91534",
+      "cp": [
+        "91400"
+      ],
+      "zone": "nord",
+      "population": 3500,
+      "geo": {
+        "lat": 48.7236,
+        "lng": 2.1678
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "gif-sur-yvette",
+        "orsay",
+        "palaiseau"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Saclay (91400) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saclay (91400). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "sainte-genevieve-des-bois",
+      "name": "Sainte-Geneviève-des-Bois",
+      "insee": "91540",
+      "cp": [
+        "91700"
+      ],
+      "zone": "nord",
+      "population": 38000,
+      "geo": {
+        "lat": 48.6403,
+        "lng": 2.3247
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "morsang-sur-orge",
+        "saint-michel-sur-orge",
+        "fleury-merogis",
+        "villiers-sur-orge"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 250,
+        "titleDebouchage": "Débouchage Sainte-Geneviève-des-Bois (91700) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Sainte-Geneviève-des-Bois (91700). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-germain-les-arpajon",
+      "name": "Saint-Germain-lès-Arpajon",
+      "insee": "91545",
+      "cp": [
+        "91180"
+      ],
+      "zone": "nord",
+      "population": 9000,
+      "geo": {
+        "lat": 48.5883,
+        "lng": 2.2653
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "arpajon",
+        "bretigny-sur-orge",
+        "la-norville",
+        "egly"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Saint-Germain-lès-Arpajon (91180) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Germain-lès-Arpajon (91180). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-germain-les-corbeil",
+      "name": "Saint-Germain-lès-Corbeil",
+      "insee": "91547",
+      "cp": [
+        "91250"
+      ],
+      "zone": "nord",
+      "population": 10000,
+      "geo": {
+        "lat": 48.6361,
+        "lng": 2.51
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "saintry-sur-seine",
+        "morsang-sur-seine"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Saint-Germain-lès-Corbeil (91250) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Germain-lès-Corbeil (91250). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-michel-sur-orge",
+      "name": "Saint-Michel-sur-Orge",
+      "insee": "91553",
+      "cp": [
+        "91240"
+      ],
+      "zone": "nord",
+      "population": 22000,
+      "geo": {
+        "lat": 48.6347,
+        "lng": 2.3136
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "sainte-genevieve-des-bois",
+        "morsang-sur-orge",
+        "savigny-sur-orge",
+        "bretigny-sur-orge"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Saint-Michel-sur-Orge (91240) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Michel-sur-Orge (91240). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-pierre-du-perray",
+      "name": "Saint-Pierre-du-Perray",
+      "insee": "91558",
+      "cp": [
+        "91280"
+      ],
+      "zone": "nord",
+      "population": 9000,
+      "geo": {
+        "lat": 48.5961,
+        "lng": 2.5058
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "le-coudray-montceaux"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Saint-Pierre-du-Perray (91280) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Pierre-du-Perray (91280). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saintry-sur-seine",
+      "name": "Saintry-sur-Seine",
+      "insee": "91533",
+      "cp": [
+        "91250"
+      ],
+      "zone": "nord",
+      "population": 3000,
+      "geo": {
+        "lat": 48.6275,
+        "lng": 2.5072
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "morsang-sur-seine",
+        "saint-germain-les-corbeil",
+        "corbeil-essonnes"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Saintry-sur-Seine (91250) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saintry-sur-Seine (91250). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saulx-les-chartreux",
+      "name": "Saulx-les-Chartreux",
+      "insee": "91572",
+      "cp": [
+        "91160"
+      ],
+      "zone": "nord",
+      "population": 8000,
+      "geo": {
+        "lat": 48.6694,
+        "lng": 2.2711
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "longjumeau",
+        "massy",
+        "chilly-mazarin",
+        "ballainvilliers"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Saulx-les-Chartreux (91160) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saulx-les-Chartreux (91160). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "savigny-sur-orge",
+      "name": "Savigny-sur-Orge",
+      "insee": "91573",
+      "cp": [
+        "91600"
+      ],
+      "zone": "nord",
+      "population": 36000,
+      "geo": {
+        "lat": 48.6803,
+        "lng": 2.34
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "juvisy-sur-orge",
+        "morangis",
+        "morsang-sur-orge",
+        "saint-michel-sur-orge",
+        "epinay-sur-orge"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 250,
+        "titleDebouchage": "Débouchage Savigny-sur-Orge (91600) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Savigny-sur-Orge (91600). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "soisy-sur-seine",
+      "name": "Soisy-sur-Seine",
+      "insee": "91596",
+      "cp": [
+        "91450"
+      ],
+      "zone": "nord",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6403,
+        "lng": 2.4728
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "draveil",
+        "corbeil-essonnes",
+        "morsang-sur-seine",
+        "saint-germain-les-corbeil"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Soisy-sur-Seine (91450) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Soisy-sur-Seine (91450). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "tigery",
+      "name": "Tigery",
+      "insee": "91619",
+      "cp": [
+        "91250"
+      ],
+      "zone": "nord",
+      "population": 3000,
+      "geo": {
+        "lat": 48.6247,
+        "lng": 2.52
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "saint-germain-les-corbeil"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Tigery (91250) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Tigery (91250). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "varennes-jarcy",
+      "name": "Varennes-Jarcy",
+      "insee": "91631",
+      "cp": [
+        "91480"
+      ],
+      "zone": "nord",
+      "population": 3000,
+      "geo": {
+        "lat": 48.6908,
+        "lng": 2.5608
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "brunoy",
+        "quincy-sous-senat"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Varennes-Jarcy (91480) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Varennes-Jarcy (91480). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "vert-le-grand",
+      "name": "Vert-le-Grand",
+      "insee": "91640",
+      "cp": [
+        "91810"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.555,
+        "lng": 2.3736
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "vert-le-petit",
+        "fontenay-le-vicomte",
+        "mennecy"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Vert-le-Grand (91810) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Vert-le-Grand (91810). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "vert-le-petit",
+      "name": "Vert-le-Petit",
+      "insee": "91641",
+      "cp": [
+        "91710"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.565,
+        "lng": 2.3614
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "vert-le-grand",
+        "fontenay-le-vicomte",
+        "ballancourt-sur-essonne"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Vert-le-Petit (91710) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Vert-le-Petit (91710). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "verrieres-le-buisson",
+      "name": "Verrières-le-Buisson",
+      "insee": "91643",
+      "cp": [
+        "91370"
+      ],
+      "zone": "nord",
+      "population": 14000,
+      "geo": {
+        "lat": 48.7394,
+        "lng": 2.2542
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "massy",
+        "igny",
+        "palaiseau"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Verrières-le-Buisson (91370) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Verrières-le-Buisson (91370). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "vigneux-sur-seine",
+      "name": "Vigneux-sur-Seine",
+      "insee": "91651",
+      "cp": [
+        "91270"
+      ],
+      "zone": "nord",
+      "population": 27000,
+      "geo": {
+        "lat": 48.6706,
+        "lng": 2.4444
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "draveil",
+        "montgeron",
+        "ris-orangis"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Vigneux-sur-Seine (91270) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Vigneux-sur-Seine (91270). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "villabe",
+      "name": "Villabé",
+      "insee": "91652",
+      "cp": [
+        "91100"
+      ],
+      "zone": "nord",
+      "population": 5000,
+      "geo": {
+        "lat": 48.585,
+        "lng": 2.4578
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "corbeil-essonnes",
+        "lisses"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Villabé (91100) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Villabé (91100). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "villebon-sur-yvette",
+      "name": "Villebon-sur-Yvette",
+      "insee": "91656",
+      "cp": [
+        "91140"
+      ],
+      "zone": "nord",
+      "population": 11000,
+      "geo": {
+        "lat": 48.7039,
+        "lng": 2.2189
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "massy",
+        "chilly-mazarin",
+        "nozay"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 120,
+        "titleDebouchage": "Débouchage Villebon-sur-Yvette (91140) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Villebon-sur-Yvette (91140). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "villemoisson-sur-orge",
+      "name": "Villemoisson-sur-Orge",
+      "insee": "91657",
+      "cp": [
+        "91360"
+      ],
+      "zone": "nord",
+      "population": 8000,
+      "geo": {
+        "lat": 48.6578,
+        "lng": 2.3289
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "savigny-sur-orge",
+        "epinay-sur-orge",
+        "morsang-sur-orge"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Villemoisson-sur-Orge (91360) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Villemoisson-sur-Orge (91360). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "villiers-sur-orge",
+      "name": "Villiers-sur-Orge",
+      "insee": "91663",
+      "cp": [
+        "91700"
+      ],
+      "zone": "nord",
+      "population": 4000,
+      "geo": {
+        "lat": 48.625,
+        "lng": 2.3183
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "sainte-genevieve-des-bois",
+        "saint-michel-sur-orge"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Débouchage Villiers-sur-Orge (91700) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Villiers-sur-Orge (91700). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "viry-chatillon",
+      "name": "Viry-Châtillon",
+      "insee": "91669",
+      "cp": [
+        "91170"
+      ],
+      "zone": "nord",
+      "population": 32000,
+      "geo": {
+        "lat": 48.6672,
+        "lng": 2.3814
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "grigny",
+        "juvisy-sur-orge",
+        "athis-mons"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 250,
+        "titleDebouchage": "Débouchage Viry-Châtillon (91170) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Viry-Châtillon (91170). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "wissous",
+      "name": "Wissous",
+      "insee": "91689",
+      "cp": [
+        "91320"
+      ],
+      "zone": "nord",
+      "population": 6000,
+      "geo": {
+        "lat": 48.7167,
+        "lng": 2.3369
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "massy",
+        "morangis",
+        "chilly-mazarin"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Débouchage Wissous (91320) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Wissous (91320). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "yerres",
+      "name": "Yerres",
+      "insee": "91691",
+      "cp": [
+        "91330"
+      ],
+      "zone": "nord",
+      "population": 29000,
+      "geo": {
+        "lat": 48.7197,
+        "lng": 2.49
+      },
+      "assainissement": "collectif",
+      "spanc": null,
+      "adjacentes": [
+        "brunoy",
+        "montgeron",
+        "crosne",
+        "epinay-sous-senat"
+      ],
+      "seo": {
+        "priorite": "haute",
+        "volumeEstimeMensuel": 180,
+        "titleDebouchage": "Débouchage Yerres (91330) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Yerres (91330). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "abbeville-la-riviere",
+      "name": "Abbéville-la-Rivière",
+      "insee": "91001",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 450,
+      "geo": {
+        "lat": 48.3836,
+        "lng": 2.1381
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "morigny-champigny",
+        "ormoy-la-riviere"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Abbéville-la-Rivière (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Abbéville-la-Rivière (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "angerville",
+      "name": "Angerville",
+      "insee": "91017",
+      "cp": [
+        "91670"
+      ],
+      "zone": "sud",
+      "population": 4000,
+      "geo": {
+        "lat": 48.32,
+        "lng": 2.0
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-de-beauce-et-du-gatinais",
+      "adjacentes": [
+        "monnerville",
+        "mereville",
+        "pussay"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Angerville (91670) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Angerville (91670). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "arrancourt",
+      "name": "Arrancourt",
+      "insee": "91022",
+      "cp": [
+        "91580"
+      ],
+      "zone": "sud",
+      "population": 300,
+      "geo": {
+        "lat": 48.37,
+        "lng": 2.08
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "etrechy"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Arrancourt (91580) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Arrancourt (91580). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "auvers-saint-georges",
+      "name": "Auvers-Saint-Georges",
+      "insee": "91032",
+      "cp": [
+        "91580"
+      ],
+      "zone": "sud",
+      "population": 3000,
+      "geo": {
+        "lat": 48.47,
+        "lng": 2.15
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etrechy",
+        "etampes",
+        "villeneuve-sur-auvers"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Auvers-Saint-Georges (91580) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Auvers-Saint-Georges (91580). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "authon-la-plaine",
+      "name": "Authon-la-Plaine",
+      "insee": "91033",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 1000,
+      "geo": {
+        "lat": 48.5072,
+        "lng": 1.9539
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "saint-escobille",
+        "plessis-saint-benoist"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Authon-la-Plaine (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Authon-la-Plaine (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "avrainville",
+      "name": "Avrainville",
+      "insee": "91035",
+      "cp": [
+        "91630"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.535,
+        "lng": 2.2781
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "marolles-en-hurepoix",
+        "cheptainville",
+        "guibeville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Avrainville (91630) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Avrainville (91630). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "baulne",
+      "name": "Baulne",
+      "insee": "91039",
+      "cp": [
+        "91590"
+      ],
+      "zone": "sud",
+      "population": 700,
+      "geo": {
+        "lat": 48.49,
+        "lng": 2.4
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "cerny",
+        "la-ferte-alais",
+        "d-huison-longueville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Baulne (91590) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Baulne (91590). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "boissy-la-riviere",
+      "name": "Boissy-la-Rivière",
+      "insee": "91057",
+      "cp": [
+        "91690"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.405,
+        "lng": 2.095
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "saclas",
+        "guillerval",
+        "etampes"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Boissy-la-Rivière (91690) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Boissy-la-Rivière (91690). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "boissy-le-cutte",
+      "name": "Boissy-le-Cutté",
+      "insee": "91059",
+      "cp": [
+        "91750"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.41,
+        "lng": 2.35
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "champcueil",
+        "nainville-les-roches",
+        "milly-la-foret"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Boissy-le-Cutté (91750) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Boissy-le-Cutté (91750). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "boissy-le-sec",
+      "name": "Boissy-le-Sec",
+      "insee": "91060",
+      "cp": [
+        "91870"
+      ],
+      "zone": "sud",
+      "population": 1500,
+      "geo": {
+        "lat": 48.46,
+        "lng": 2.12
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "etrechy",
+        "arrancourt"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Boissy-le-Sec (91870) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Boissy-le-Sec (91870). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "bouray-sur-juine",
+      "name": "Bouray-sur-Juine",
+      "insee": "91070",
+      "cp": [
+        "91850"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.505,
+        "lng": 2.295
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "lardy",
+        "janville-sur-juine",
+        "chamarande"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Bouray-sur-Juine (91850) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Bouray-sur-Juine (91850). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "boutervilliers",
+      "name": "Boutervilliers",
+      "insee": "91074",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 300,
+      "geo": {
+        "lat": 48.405,
+        "lng": 2.05
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "champmotteux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Boutervilliers (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Boutervilliers (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "breux-jouy",
+      "name": "Breux-Jouy",
+      "insee": "91095",
+      "cp": [
+        "91650"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.54,
+        "lng": 2.185
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "saint-yon",
+        "arpajon"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Breux-Jouy (91650) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Breux-Jouy (91650). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "brieres-les-scelles",
+      "name": "Brières-les-Scellés",
+      "insee": "91098",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.505,
+        "lng": 2.03
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "corbreuse",
+        "richarville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Brières-les-Scellés (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Brières-les-Scellés (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "brouy",
+      "name": "Brouy",
+      "insee": "91100",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.39,
+        "lng": 2.2
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "morigny-champigny"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Brouy (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Brouy (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "buno-bonnevaux",
+      "name": "Buno-Bonnevaux",
+      "insee": "91103",
+      "cp": [
+        "91720"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.425,
+        "lng": 2.46
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "oncy-sur-ecole",
+        "valpuiseaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Buno-Bonnevaux (91720) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Buno-Bonnevaux (91720). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "cerny",
+      "name": "Cerny",
+      "insee": "91105",
+      "cp": [
+        "91590"
+      ],
+      "zone": "sud",
+      "population": 3000,
+      "geo": {
+        "lat": 48.4817,
+        "lng": 2.4064
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "la-ferte-alais",
+        "baulne",
+        "itteville",
+        "d-huison-longueville"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Cerny (91590) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Cerny (91590). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "chamarande",
+      "name": "Chamarande",
+      "insee": "91106",
+      "cp": [
+        "91730"
+      ],
+      "zone": "sud",
+      "population": 900,
+      "geo": {
+        "lat": 48.49,
+        "lng": 2.215
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "lardy",
+        "etrechy",
+        "bouray-sur-juine",
+        "torfou"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Chamarande (91730) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Chamarande (91730). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "champcueil",
+      "name": "Champcueil",
+      "insee": "91110",
+      "cp": [
+        "91750"
+      ],
+      "zone": "sud",
+      "population": 3000,
+      "geo": {
+        "lat": 48.45,
+        "lng": 2.36
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "nainville-les-roches",
+        "boissy-le-cutte",
+        "itteville"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Champcueil (91750) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Champcueil (91750). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "champmotteux",
+      "name": "Champmotteux",
+      "insee": "91111",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 200,
+      "geo": {
+        "lat": 48.355,
+        "lng": 2.155
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "boutervilliers"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Champmotteux (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Champmotteux (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "chauffour-les-etrechy",
+      "name": "Chauffour-lès-Étréchy",
+      "insee": "91113",
+      "cp": [
+        "91580"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.465,
+        "lng": 2.17
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etrechy",
+        "etampes",
+        "villeneuve-sur-auvers"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Chauffour-lès-Étréchy (91580) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Chauffour-lès-Étréchy (91580). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "cheptainville",
+      "name": "Cheptainville",
+      "insee": "91116",
+      "cp": [
+        "91630"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.55,
+        "lng": 2.315
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "marolles-en-hurepoix",
+        "leudeville",
+        "avrainville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Cheptainville (91630) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Cheptainville (91630). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "corbreuse",
+      "name": "Corbreuse",
+      "insee": "91172",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 1500,
+      "geo": {
+        "lat": 48.515,
+        "lng": 2.01
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "brieres-les-scelles",
+        "roinville",
+        "authon-la-plaine"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Corbreuse (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Corbreuse (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "courdimanche-sur-essonne",
+      "name": "Courdimanche-sur-Essonne",
+      "insee": "91176",
+      "cp": [
+        "91720"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.44,
+        "lng": 2.41
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "maisse",
+        "valpuiseaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Courdimanche-sur-Essonne (91720) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Courdimanche-sur-Essonne (91720). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "courances",
+      "name": "Courances",
+      "insee": "91177",
+      "cp": [
+        "91490"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.4508,
+        "lng": 2.5031
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "oncy-sur-ecole",
+        "moigny-sur-ecole"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Courances (91490) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Courances (91490). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "dannemois",
+      "name": "Dannemois",
+      "insee": "91189",
+      "cp": [
+        "91490"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.42,
+        "lng": 2.44
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "buno-bonnevaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Dannemois (91490) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Dannemois (91490). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "d-huison-longueville",
+      "name": "D'Huison-Longueville",
+      "insee": "91196",
+      "cp": [
+        "91590"
+      ],
+      "zone": "sud",
+      "population": 1200,
+      "geo": {
+        "lat": 48.465,
+        "lng": 2.405
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "la-ferte-alais",
+        "cerny",
+        "baulne"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique D'Huison-Longueville (91590) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à D'Huison-Longueville (91590). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "etrechy",
+      "name": "Étréchy",
+      "insee": "91222",
+      "cp": [
+        "91580"
+      ],
+      "zone": "sud",
+      "population": 7000,
+      "geo": {
+        "lat": 48.4892,
+        "lng": 2.1853
+      },
+      "assainissement": "mixte",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "chamarande",
+        "lardy",
+        "auvers-saint-georges"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Vidange fosse septique Étréchy (91580) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Étréchy (91580). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "fontaine-la-riviere",
+      "name": "Fontaine-la-Rivière",
+      "insee": "91234",
+      "cp": [
+        "91690"
+      ],
+      "zone": "sud",
+      "population": 400,
+      "geo": {
+        "lat": 48.375,
+        "lng": 2.085
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "saclas",
+        "guillerval"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Fontaine-la-Rivière (91690) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Fontaine-la-Rivière (91690). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "fontenay-le-vicomte",
+      "name": "Fontenay-le-Vicomte",
+      "insee": "91237",
+      "cp": [
+        "91540"
+      ],
+      "zone": "sud",
+      "population": 3000,
+      "geo": {
+        "lat": 48.545,
+        "lng": 2.395
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "vert-le-petit",
+        "champcueil",
+        "ballancourt-sur-essonne"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Fontenay-le-Vicomte (91540) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Fontenay-le-Vicomte (91540). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "fontenay-les-briis",
+      "name": "Fontenay-lès-Briis",
+      "insee": "91238",
+      "cp": [
+        "91640"
+      ],
+      "zone": "sud",
+      "population": 2500,
+      "geo": {
+        "lat": 48.6167,
+        "lng": 2.0833
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-pays-de-limours",
+      "adjacentes": [
+        "limours",
+        "forges-les-bains",
+        "janvry"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Fontenay-lès-Briis (91640) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Fontenay-lès-Briis (91640). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "forges-les-bains",
+      "name": "Forges-les-Bains",
+      "insee": "91239",
+      "cp": [
+        "91470"
+      ],
+      "zone": "sud",
+      "population": 4000,
+      "geo": {
+        "lat": 48.6408,
+        "lng": 2.1061
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-pays-de-limours",
+      "adjacentes": [
+        "limours",
+        "saint-jean-de-beauregard",
+        "pecqueuse",
+        "fontenay-les-briis"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Forges-les-Bains (91470) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Forges-les-Bains (91470). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "guibeville",
+      "name": "Guibeville",
+      "insee": "91288",
+      "cp": [
+        "91630"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.57,
+        "lng": 2.365
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "marolles-en-hurepoix",
+        "cheptainville",
+        "avrainville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Guibeville (91630) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Guibeville (91630). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "guillerval",
+      "name": "Guillerval",
+      "insee": "91289",
+      "cp": [
+        "91690"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.4,
+        "lng": 2.075
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "saclas",
+        "ormoy-la-riviere",
+        "fontaine-la-riviere"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Guillerval (91690) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Guillerval (91690). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "itteville",
+      "name": "Itteville",
+      "insee": "91311",
+      "cp": [
+        "91760"
+      ],
+      "zone": "sud",
+      "population": 5000,
+      "geo": {
+        "lat": 48.515,
+        "lng": 2.34
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "cerny",
+        "champcueil",
+        "la-ferte-alais",
+        "fontenay-le-vicomte"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Vidange fosse septique Itteville (91760) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Itteville (91760). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "janville-sur-juine",
+      "name": "Janville-sur-Juine",
+      "insee": "91313",
+      "cp": [
+        "91510"
+      ],
+      "zone": "sud",
+      "population": 3000,
+      "geo": {
+        "lat": 48.5408,
+        "lng": 2.2578
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "lardy",
+        "bouray-sur-juine",
+        "etrechy",
+        "chamarande"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Janville-sur-Juine (91510) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Janville-sur-Juine (91510). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "janvry",
+      "name": "Janvry",
+      "insee": "91314",
+      "cp": [
+        "91640"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.665,
+        "lng": 2.15
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-pays-de-limours",
+      "adjacentes": [
+        "forges-les-bains",
+        "limours",
+        "fontenay-les-briis"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Janvry (91640) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Janvry (91640). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "la-ferte-alais",
+      "name": "La Ferté-Alais",
+      "insee": "91228",
+      "cp": [
+        "91590"
+      ],
+      "zone": "sud",
+      "population": 5000,
+      "geo": {
+        "lat": 48.4906,
+        "lng": 2.3483
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "cerny",
+        "baulne",
+        "itteville",
+        "d-huison-longueville"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Vidange fosse septique La Ferté-Alais (91590) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à La Ferté-Alais (91590). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "la-foret-le-roi",
+      "name": "La Forêt-le-Roi",
+      "insee": "91246",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.535,
+        "lng": 2.055
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "roinville",
+        "saint-escobille"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique La Forêt-le-Roi (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à La Forêt-le-Roi (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "lardy",
+      "name": "Lardy",
+      "insee": "91340",
+      "cp": [
+        "91510"
+      ],
+      "zone": "sud",
+      "population": 6000,
+      "geo": {
+        "lat": 48.5239,
+        "lng": 2.2364
+      },
+      "assainissement": "mixte",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "etrechy",
+        "bouray-sur-juine",
+        "janville-sur-juine",
+        "chamarande"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Vidange fosse septique Lardy (91510) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Lardy (91510). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "leudeville",
+      "name": "Leudeville",
+      "insee": "91349",
+      "cp": [
+        "91630"
+      ],
+      "zone": "sud",
+      "population": 700,
+      "geo": {
+        "lat": 48.565,
+        "lng": 2.315
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "marolles-en-hurepoix",
+        "cheptainville",
+        "avrainville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Leudeville (91630) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Leudeville (91630). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "limours",
+      "name": "Limours",
+      "insee": "91354",
+      "cp": [
+        "91470"
+      ],
+      "zone": "sud",
+      "population": 7000,
+      "geo": {
+        "lat": 48.6483,
+        "lng": 2.0733
+      },
+      "assainissement": "mixte",
+      "spanc": "cc-pays-de-limours",
+      "adjacentes": [
+        "forges-les-bains",
+        "janvry",
+        "saint-jean-de-beauregard",
+        "fontenay-les-briis"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Vidange fosse septique Limours (91470) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Limours (91470). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "maisse",
+      "name": "Maisse",
+      "insee": "91363",
+      "cp": [
+        "91720"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.3906,
+        "lng": 2.4139
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "courdimanche-sur-essonne",
+        "valpuiseaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Maisse (91720) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Maisse (91720). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "mauchamps",
+      "name": "Mauchamps",
+      "insee": "91381",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 200,
+      "geo": {
+        "lat": 48.36,
+        "lng": 2.21
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "morigny-champigny"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Mauchamps (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Mauchamps (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "mereville",
+      "name": "Méréville",
+      "insee": "91385",
+      "cp": [
+        "91660"
+      ],
+      "zone": "sud",
+      "population": 3000,
+      "geo": {
+        "lat": 48.3264,
+        "lng": 2.0839
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-de-beauce-et-du-gatinais",
+      "adjacentes": [
+        "angerville",
+        "pussay",
+        "monnerville"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Méréville (91660) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Méréville (91660). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "moigny-sur-ecole",
+      "name": "Moigny-sur-École",
+      "insee": "91394",
+      "cp": [
+        "91490"
+      ],
+      "zone": "sud",
+      "population": 1000,
+      "geo": {
+        "lat": 48.4264,
+        "lng": 2.4806
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "courances",
+        "oncy-sur-ecole"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Moigny-sur-École (91490) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Moigny-sur-École (91490). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "mondeville",
+      "name": "Mondeville",
+      "insee": "91399",
+      "cp": [
+        "91590"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.445,
+        "lng": 2.375
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "la-ferte-alais",
+        "cerny",
+        "d-huison-longueville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Mondeville (91590) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Mondeville (91590). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "monnerville",
+      "name": "Monnerville",
+      "insee": "91400",
+      "cp": [
+        "91930"
+      ],
+      "zone": "sud",
+      "population": 1500,
+      "geo": {
+        "lat": 48.2769,
+        "lng": 1.9781
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-de-beauce-et-du-gatinais",
+      "adjacentes": [
+        "angerville",
+        "mereville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Monnerville (91930) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Monnerville (91930). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "morigny-champigny",
+      "name": "Morigny-Champigny",
+      "insee": "91406",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 4000,
+      "geo": {
+        "lat": 48.4242,
+        "lng": 2.1239
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "etrechy",
+        "abbeville-la-riviere",
+        "brouy"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Morigny-Champigny (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Morigny-Champigny (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "nainville-les-roches",
+      "name": "Nainville-les-Roches",
+      "insee": "91433",
+      "cp": [
+        "91750"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.43,
+        "lng": 2.38
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "champcueil",
+        "milly-la-foret",
+        "boissy-le-cutte"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Nainville-les-Roches (91750) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Nainville-les-Roches (91750). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "oncy-sur-ecole",
+      "name": "Oncy-sur-École",
+      "insee": "91468",
+      "cp": [
+        "91490"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.435,
+        "lng": 2.49
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "courances",
+        "moigny-sur-ecole",
+        "buno-bonnevaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Oncy-sur-École (91490) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Oncy-sur-École (91490). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "ormoy-la-riviere",
+      "name": "Ormoy-la-Rivière",
+      "insee": "91469",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 1000,
+      "geo": {
+        "lat": 48.41,
+        "lng": 2.14
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "guillerval",
+        "saclas",
+        "boissy-la-riviere"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Ormoy-la-Rivière (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Ormoy-la-Rivière (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "pecqueuse",
+      "name": "Pecqueuse",
+      "insee": "91478",
+      "cp": [
+        "91470"
+      ],
+      "zone": "sud",
+      "population": 700,
+      "geo": {
+        "lat": 48.62,
+        "lng": 2.08
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-pays-de-limours",
+      "adjacentes": [
+        "limours",
+        "forges-les-bains",
+        "saint-jean-de-beauregard"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Pecqueuse (91470) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Pecqueuse (91470). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "plessis-saint-benoist",
+      "name": "Plessis-Saint-Benoist",
+      "insee": "91481",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.54,
+        "lng": 2.04
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "saint-escobille",
+        "authon-la-plaine",
+        "la-foret-le-roi"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Plessis-Saint-Benoist (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Plessis-Saint-Benoist (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "puiselet-le-marais",
+      "name": "Puiselet-le-Marais",
+      "insee": "91507",
+      "cp": [
+        "91150"
+      ],
+      "zone": "sud",
+      "population": 400,
+      "geo": {
+        "lat": 48.39,
+        "lng": 2.185
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "morigny-champigny",
+        "champmotteux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Puiselet-le-Marais (91150) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Puiselet-le-Marais (91150). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "pussay",
+      "name": "Pussay",
+      "insee": "91508",
+      "cp": [
+        "91740"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.3158,
+        "lng": 2.0036
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-de-beauce-et-du-gatinais",
+      "adjacentes": [
+        "angerville",
+        "monnerville",
+        "mereville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Pussay (91740) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Pussay (91740). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "richarville",
+      "name": "Richarville",
+      "insee": "91517",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 400,
+      "geo": {
+        "lat": 48.525,
+        "lng": 2.0
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "roinville",
+        "brieres-les-scelles"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Richarville (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Richarville (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "roinville",
+      "name": "Roinville",
+      "insee": "91527",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 800,
+      "geo": {
+        "lat": 48.545,
+        "lng": 2.065
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "corbreuse",
+        "richarville",
+        "la-foret-le-roi"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Roinville (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Roinville (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saclas",
+      "name": "Saclas",
+      "insee": "91533",
+      "cp": [
+        "91690"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.41,
+        "lng": 2.09
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "guillerval",
+        "ormoy-la-riviere",
+        "fontaine-la-riviere",
+        "boissy-la-riviere"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Saclas (91690) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saclas (91690). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-cheron",
+      "name": "Saint-Chéron",
+      "insee": "91541",
+      "cp": [
+        "91530"
+      ],
+      "zone": "sud",
+      "population": 5000,
+      "geo": {
+        "lat": 48.5503,
+        "lng": 2.0794
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "ollainville",
+        "sermaise",
+        "saint-maurice-montcouronne"
+      ],
+      "seo": {
+        "priorite": "moyenne",
+        "volumeEstimeMensuel": 70,
+        "titleDebouchage": "Vidange fosse septique Saint-Chéron (91530) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Chéron (91530). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-cyr-la-riviere",
+      "name": "Saint-Cyr-la-Rivière",
+      "insee": "91543",
+      "cp": [
+        "91690"
+      ],
+      "zone": "sud",
+      "population": 400,
+      "geo": {
+        "lat": 48.375,
+        "lng": 2.04
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etampes",
+        "saclas",
+        "guillerval"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Saint-Cyr-la-Rivière (91690) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Cyr-la-Rivière (91690). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-escobille",
+      "name": "Saint-Escobille",
+      "insee": "91544",
+      "cp": [
+        "91410"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.52,
+        "lng": 2.02
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "dourdan",
+        "plessis-saint-benoist",
+        "authon-la-plaine",
+        "la-foret-le-roi"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Saint-Escobille (91410) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Escobille (91410). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-hilaire",
+      "name": "Saint-Hilaire",
+      "insee": "91548",
+      "cp": [
+        "91780"
+      ],
+      "zone": "sud",
+      "population": 1500,
+      "geo": {
+        "lat": 48.51,
+        "lng": 2.225
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "lardy",
+        "etrechy",
+        "chamarande"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Saint-Hilaire (91780) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Hilaire (91780). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-jean-de-beauregard",
+      "name": "Saint-Jean-de-Beauregard",
+      "insee": "91549",
+      "cp": [
+        "91940"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.67,
+        "lng": 2.14
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-pays-de-limours",
+      "adjacentes": [
+        "limours",
+        "forges-les-bains",
+        "pecqueuse",
+        "janvry"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Saint-Jean-de-Beauregard (91940) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Jean-de-Beauregard (91940). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-maurice-montcouronne",
+      "name": "Saint-Maurice-Montcouronne",
+      "insee": "91551",
+      "cp": [
+        "91530"
+      ],
+      "zone": "sud",
+      "population": 1500,
+      "geo": {
+        "lat": 48.58,
+        "lng": 2.12
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "saint-cheron",
+        "sermaise",
+        "ollainville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 20,
+        "titleDebouchage": "Vidange fosse septique Saint-Maurice-Montcouronne (91530) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Maurice-Montcouronne (91530). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-sulpice-de-favieres",
+      "name": "Saint-Sulpice-de-Favières",
+      "insee": "91562",
+      "cp": [
+        "91910"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.415,
+        "lng": 2.005
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "saclas",
+        "etampes"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Saint-Sulpice-de-Favières (91910) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Sulpice-de-Favières (91910). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "saint-yon",
+      "name": "Saint-Yon",
+      "insee": "91565",
+      "cp": [
+        "91650"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.545,
+        "lng": 2.2
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "breuillet",
+        "arpajon",
+        "saint-germain-les-arpajon",
+        "breux-jouy"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Saint-Yon (91650) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Saint-Yon (91650). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "sermaise",
+      "name": "Sermaise",
+      "insee": "91590",
+      "cp": [
+        "91530"
+      ],
+      "zone": "sud",
+      "population": 2000,
+      "geo": {
+        "lat": 48.56,
+        "lng": 2.09
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-dourdannais-en-hurepoix",
+      "adjacentes": [
+        "saint-cheron",
+        "saint-maurice-montcouronne",
+        "ollainville"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 35,
+        "titleDebouchage": "Vidange fosse septique Sermaise (91530) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Sermaise (91530). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "torfou",
+      "name": "Torfou",
+      "insee": "91618",
+      "cp": [
+        "91730"
+      ],
+      "zone": "sud",
+      "population": 500,
+      "geo": {
+        "lat": 48.475,
+        "lng": 2.26
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-bievre-essonne",
+      "adjacentes": [
+        "chamarande",
+        "lardy",
+        "etrechy"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Torfou (91730) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Torfou (91730). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "valpuiseaux",
+      "name": "Valpuiseaux",
+      "insee": "91628",
+      "cp": [
+        "91720"
+      ],
+      "zone": "sud",
+      "population": 400,
+      "geo": {
+        "lat": 48.41,
+        "lng": 2.42
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "maisse",
+        "courdimanche-sur-essonne",
+        "buno-bonnevaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Valpuiseaux (91720) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Valpuiseaux (91720). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "videlles",
+      "name": "Videlles",
+      "insee": "91648",
+      "cp": [
+        "91720"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.43,
+        "lng": 2.46
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-coeur-essonne-juine-renarde",
+      "adjacentes": [
+        "milly-la-foret",
+        "buno-bonnevaux"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Videlles (91720) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Videlles (91720). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    },
+    {
+      "slug": "villeneuve-sur-auvers",
+      "name": "Villeneuve-sur-Auvers",
+      "insee": "91658",
+      "cp": [
+        "91580"
+      ],
+      "zone": "sud",
+      "population": 600,
+      "geo": {
+        "lat": 48.485,
+        "lng": 2.17
+      },
+      "assainissement": "non-collectif",
+      "spanc": "cc-etampois-sud-essonne",
+      "adjacentes": [
+        "etrechy",
+        "etampes",
+        "chauffour-les-etrechy"
+      ],
+      "seo": {
+        "priorite": "basse",
+        "volumeEstimeMensuel": 10,
+        "titleDebouchage": "Vidange fosse septique Villeneuve-sur-Auvers (91580) - Artisans Agréés | Guide 91",
+        "metaDescription": "Trouvez un artisan agréé pour votre assainissement à Villeneuve-sur-Auvers (91580). Intervention rapide 24h/7j. Devis gratuit. Professionnels certifiés en Essonne."
+      },
+      "artisans": []
+    }
+  ],
+  "services": {
+    "debouchage-urgence": {
+      "slug": "debouchage-urgence",
+      "label": "Débouchage de canalisation",
+      "labelCourt": "Débouchage",
+      "urgence": true,
+      "zones": [
+        "nord",
+        "sud"
+      ],
+      "description": "Intervention d'urgence pour canalisations bouchées, WC bouché, évier, douche, colonne montante. Hydrocurage haute pression.",
+      "tarifs": {
+        "interventionMin": 80,
+        "interventionMax": 250,
+        "urgenceNuit": 350,
+        "hydrocurage": 200,
+        "unite": "EUR HT",
+        "note": "Tarifs indicatifs — vérifier avec l'artisan"
+      },
+      "keywordsPrimaires": [
+        "débouchage canalisation",
+        "canalisation bouchée",
+        "WC bouché",
+        "débouchage urgence",
+        "plombier débouchage"
+      ],
+      "keywordsSecondaires": [
+        "débouchage évier",
+        "débouchage douche",
+        "curage canalisation",
+        "hydrocurage"
+      ],
+      "schemaType": "HomeAndConstructionBusiness",
+      "iconSvg": "wrench"
+    },
+    "vidange-fosse-septique": {
+      "slug": "vidange-fosse-septique",
+      "label": "Vidange de fosse septique",
+      "labelCourt": "Vidange",
+      "urgence": false,
+      "zones": [
+        "sud"
+      ],
+      "description": "Vidange et entretien des fosses septiques, fosses toutes eaux, micro-stations. Camion hydrocureur agréé. Transport matières de vidange conforme.",
+      "tarifs": {
+        "fosse3000L": 180,
+        "fosse5000L": 240,
+        "fosse8000L": 320,
+        "microStation": 200,
+        "majoration_deplacement": 30,
+        "unite": "EUR TTC",
+        "note": "Prix moyens constatés en Essonne 91"
+      },
+      "keywordsPrimaires": [
+        "vidange fosse septique",
+        "vidange fosse toutes eaux",
+        "vidangeur fosse septique"
+      ],
+      "keywordsSecondaires": [
+        "entretien fosse septique",
+        "curage fosse septique",
+        "pompage fosse septique"
+      ],
+      "schemaType": "HomeAndConstructionBusiness",
+      "iconSvg": "truck"
+    },
+    "curage-reseau": {
+      "slug": "curage-reseau",
+      "label": "Curage de réseau",
+      "labelCourt": "Curage",
+      "urgence": false,
+      "zones": [
+        "nord",
+        "sud"
+      ],
+      "description": "Curage préventif et curatif des réseaux collectifs et privatifs. Hydrocurage haute pression, aspiration des boues.",
+      "tarifs": {
+        "lineaireMin": 8,
+        "lineaireMax": 25,
+        "forfaitMinimum": 180,
+        "unite": "EUR HT / mètre linéaire",
+        "note": "Variable selon diamètre et accessibilité"
+      },
+      "keywordsPrimaires": [
+        "curage réseau",
+        "curage canalisation",
+        "hydrocurage"
+      ],
+      "keywordsSecondaires": [
+        "curage préventif",
+        "curage collectif",
+        "nettoyage réseau assainissement"
+      ],
+      "schemaType": "HomeAndConstructionBusiness",
+      "iconSvg": "pipe"
+    },
+    "inspection-camera": {
+      "slug": "inspection-camera",
+      "label": "Inspection caméra",
+      "labelCourt": "Caméra",
+      "urgence": false,
+      "zones": [
+        "nord",
+        "sud"
+      ],
+      "description": "Inspection vidéo des canalisations par caméra robotisée. Diagnostic des fissures, racines, effondrements. Rapport vidéo fourni.",
+      "tarifs": {
+        "passageMin": 150,
+        "passageMax": 350,
+        "rapportInclus": true,
+        "unite": "EUR HT",
+        "note": "Prix variable selon longueur et diamètre"
+      },
+      "keywordsPrimaires": [
+        "inspection caméra canalisation",
+        "camera canalisation",
+        "diagnostic canalisation"
+      ],
+      "keywordsSecondaires": [
+        "endoscopie canalisation",
+        "recherche fuite",
+        "détection canalisation"
+      ],
+      "schemaType": "HomeAndConstructionBusiness",
+      "iconSvg": "camera"
+    },
+    "spanc-essonne": {
+      "slug": "spanc-essonne",
+      "label": "Contrôle SPANC",
+      "labelCourt": "SPANC",
+      "urgence": false,
+      "zones": [
+        "sud"
+      ],
+      "description": "Accompagnement pour les contrôles SPANC (Service Public d'Assainissement Non Collectif). Diagnostic de conformité, rapport pour vente immobilière.",
+      "tarifs": null,
+      "keywordsPrimaires": [
+        "SPANC Essonne",
+        "contrôle assainissement non collectif",
+        "conformité SPANC"
+      ],
+      "keywordsSecondaires": [
+        "diagnostic assainissement vente",
+        "contrôle fosse septique obligatoire"
+      ],
+      "schemaType": "GovernmentService",
+      "iconSvg": "shield-check"
+    }
+  },
+  "spanc": {
+    "cc-etampois-sud-essonne": {
+      "slug": "cc-etampois-sud-essonne",
+      "label": "CC Étampois Sud Essonne",
+      "url": "https://www.cc-etampois-sud-essonne.fr",
+      "communesCouvertes": [
+        "etampes",
+        "guillerval",
+        "ormoy-la-riviere",
+        "saclas"
+      ],
+      "delaiControleJours": 30,
+      "tarifsControle": {
+        "controleConception": 75,
+        "controleRealisation": 100,
+        "diagnosticVente": 120,
+        "unite": "EUR TTC"
+      },
+      "contactSpanc": {
+        "tel": "À vérifier sur site officiel",
+        "email": "À vérifier sur site officiel"
+      }
+    },
+    "cc-dourdannais-en-hurepoix": {
+      "slug": "cc-dourdannais-en-hurepoix",
+      "label": "CC Dourdannais en Hurepoix",
+      "url": "https://www.cc-dourdannais.fr",
+      "communesCouvertes": [
+        "dourdan",
+        "saint-cheron",
+        "brieres-les-scelles"
+      ],
+      "delaiControleJours": 45,
+      "tarifsControle": {
+        "controleConception": 80,
+        "controleRealisation": 100,
+        "diagnosticVente": 130,
+        "unite": "EUR TTC"
+      },
+      "contactSpanc": {
+        "tel": "À vérifier sur site officiel",
+        "email": "À vérifier sur site officiel"
+      }
+    },
+    "cc-coeur-essonne-juine-renarde": {
+      "slug": "cc-coeur-essonne-juine-renarde",
+      "label": "CC Cœur d'Essonne — Juine et Renarde",
+      "url": "https://www.coeur-essonne.fr",
+      "communesCouvertes": [
+        "milly-la-foret",
+        "oncy-sur-ecole",
+        "courances",
+        "moigny-sur-ecole"
+      ],
+      "delaiControleJours": 30,
+      "tarifsControle": {
+        "controleConception": 75,
+        "controleRealisation": 95,
+        "diagnosticVente": 115,
+        "unite": "EUR TTC"
+      },
+      "contactSpanc": {
+        "tel": "À vérifier sur site officiel",
+        "email": "À vérifier sur site officiel"
+      }
+    },
+    "cc-pays-de-limours": {
+      "name": "CC des Pays de Limours",
+      "communes": [
+        "limours",
+        "forges-les-bains",
+        "janvry",
+        "pecqueuse",
+        "saint-jean-de-beauregard",
+        "fontenay-les-briis"
+      ],
+      "contact": {
+        "tel": "01 64 91 07 00",
+        "site": "https://www.cc-paysdelimours.fr"
+      },
+      "tarifsControle": {
+        "diagnostic": 150,
+        "periodique": 100
+      },
+      "noteEEAT": "Collectivité compétente SPANC secteur Limours-Forges. Contrôles obligatoires pour les installations non collectives."
+    },
+    "cc-bievre-essonne": {
+      "name": "CA Bièvre Essonne",
+      "communes": [
+        "avrainville",
+        "bouray-sur-juine",
+        "chamarande",
+        "cheptainville",
+        "guibeville",
+        "janville-sur-juine",
+        "lardy",
+        "leudeville",
+        "saint-hilaire",
+        "saint-yon",
+        "torfou",
+        "breux-jouy"
+      ],
+      "contact": {
+        "tel": "01 60 83 46 06",
+        "site": "https://www.bievre-essonne.fr"
+      },
+      "tarifsControle": {
+        "diagnostic": 160,
+        "periodique": 110
+      },
+      "noteEEAT": "CA Bièvre Essonne, SPANC compétent sur la vallée de la Juine et le secteur Arpajon-Lardy."
+    },
+    "cc-coeur-de-beauce-et-du-gatinais": {
+      "name": "CC Cœur de Beauce et du Gâtinais",
+      "communes": [
+        "angerville",
+        "mereville",
+        "monnerville",
+        "pussay"
+      ],
+      "contact": {
+        "tel": "02 38 33 70 28",
+        "site": "https://www.cc-coeurdebeauce.fr"
+      },
+      "tarifsControle": {
+        "diagnostic": 140,
+        "periodique": 95
+      },
+      "noteEEAT": "Collectivité SPANC pour le secteur sud de l'Essonne à la limite de la Beauce et du Gâtinais."
+    }
+  },
+  "eeat": {
+    "agrementPrefectoral": {
+      "label": "Agrément Préfectoral Transport Matières de Vidange",
+      "texteBadge": "Agréé Préfecture 91",
+      "description": "Obligatoire pour tout transport de matières de vidange. Délivré par la Préfecture de l'Essonne.",
+      "lienOfficiel": "https://www.essonne.gouv.fr"
+    },
+    "certifications": [
+      {
+        "code": "qualibat-rge",
+        "label": "Qualibat RGE",
+        "description": "Reconnaissance de la qualité et de la compétence des entreprises du bâtiment"
+      },
+      {
+        "code": "certifosite",
+        "label": "Certifosite",
+        "description": "Certification spécifique aux professionnels de l'assainissement non-collectif"
+      },
+      {
+        "code": "pro-de-lassainissement",
+        "label": "Pro de l'Assainissement",
+        "description": "Label qualité dédié aux professionnels de l'assainissement"
+      }
+    ],
+    "signauxConfiance": [
+      "Agrément préfectoral affiché",
+      "SIRET vérifié",
+      "Avis clients vérifiés",
+      "Devis gratuit et transparent",
+      "Conformité SPANC assurée"
+    ]
+  },
+  "artisans": {
+    "_note": "MOCKED DATA — Ne pas utiliser en production. Synchroniser via scripts/sync_knowledge.py",
+    "items": [
+      {
+        "id": "mock-001",
+        "raisonSociale": "Assainissement Pro 91",
+        "siret": "000 000 000 00000",
+        "slug": "assainissement-pro-91",
+        "communesCouvertes": [
+          "evry-courcouronnes",
+          "corbeil-essonnes",
+          "ris-orangis"
+        ],
+        "services": [
+          "debouchage",
+          "curage",
+          "inspection-camera"
+        ],
+        "premium": false,
+        "agrementPrefectoral": true,
+        "certifications": [
+          "qualibat-rge"
+        ],
+        "note": 4.7,
+        "nbAvis": 23,
+        "tel": "01 XX XX XX XX",
+        "horaires": "Lun-Sam 8h-19h, Urgence 24h/7j"
+      },
+      {
+        "id": "mock-002",
+        "raisonSociale": "Sud Essonne Vidange",
+        "siret": "000 000 000 00001",
+        "slug": "sud-essonne-vidange",
+        "communesCouvertes": [
+          "etampes",
+          "dourdan",
+          "milly-la-foret"
+        ],
+        "services": [
+          "vidange-fosse-septique",
+          "curage",
+          "spanc"
+        ],
+        "premium": true,
+        "agrementPrefectoral": true,
+        "certifications": [
+          "pro-de-lassainissement"
+        ],
+        "note": 4.9,
+        "nbAvis": 47,
+        "tel": "01 XX XX XX XX",
+        "horaires": "Lun-Ven 7h30-18h, Sam 8h-13h"
+      }
+    ]
+  }
+}

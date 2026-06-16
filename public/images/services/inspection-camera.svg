@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <rect width="400" height="200" fill="#F5F3FF"/>
+  <circle cx="200" cy="100" r="60" fill="#DDD6FE" opacity="0.5"/>
+  <rect x="160" y="80" width="50" height="40" rx="6" fill="#7C3AED" opacity="0.8"/>
+  <circle cx="210" cy="100" r="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M210 100 L260 85" stroke="#8B5CF6" stroke-width="2"/>
+  <path d="M210 100 L260 115" stroke="#8B5CF6" stroke-width="2"/>
+  <path d="M155 100 L130 90 L130 110 Z" fill="#6D28D9"/>
+  <text x="200" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#3B0764" font-weight="600">Inspection Camera</text>
+</svg>

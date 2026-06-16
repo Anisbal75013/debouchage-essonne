@@ -1,0 +1,45 @@
+---
+import knowledgeMap from '../../data/knowledge_map.json';
+
+export interface Props {
+  adjacentes: string[];
+  serviceSlug: string;
+  zoneSlug: string;
+  currentVille: string;
+}
+
+const { adjacentes, serviceSlug, zoneSlug, currentVille } = Astro.props;
+
+const adjacentCommunes = adjacentes
+  .map(slug => knowledgeMap.communes.find(c => c.slug === slug))
+  .filter(Boolean);
+
+const serviceData = Object.values(knowledgeMap.services).find(s => s.slug === serviceSlug);
+const serviceLabel = serviceData?.labelCourt ?? 'Assainissement';
+---
+
+{adjacentCommunes.length > 0 && (
+  <section class="mt-12 pt-8 border-t border-gray-200" aria-label="Communes voisines">
+    <h2 class="text-xl font-bold text-gray-900 mb-1">
+      {serviceLabel} dans les communes voisines
+    </h2>
+    <p class="text-gray-500 text-sm mb-5">
+      Nos artisans agrees interviennent egalement dans les communes limitrophes de l'Essonne (91).
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      {adjacentCommunes.map(commune => (
+        <a
+          href={`/${serviceSlug}/${zoneSlug}/${commune.slug}/`}
+          class="block p-3 bg-gray-50 hover:bg-brand-50 border border-gray-200 hover:border-brand-300 rounded-lg transition-all group"
+        >
+          <span class="block text-sm font-medium text-gray-900 group-hover:text-brand-700 leading-tight">
+            {serviceLabel} {commune.name}
+          </span>
+          <span class="block text-xs text-gray-400 mt-0.5">
+            {commune.cp[0]} &mdash; Essonne
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

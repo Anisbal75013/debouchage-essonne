@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <rect width="400" height="200" fill="#FFF7ED"/>
+  <circle cx="200" cy="100" r="60" fill="#FED7AA" opacity="0.5"/>
+  <path d="M160 120 Q180 90 200 100 Q220 110 240 80" stroke="#EA580C" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M170 140 L230 140" stroke="#EA580C" stroke-width="3" stroke-linecap="round"/>
+  <path d="M155 140 L165 140" stroke="#C2410C" stroke-width="3" stroke-linecap="round"/>
+  <path d="M235 140 L245 140" stroke="#C2410C" stroke-width="3" stroke-linecap="round"/>
+  <rect x="185" y="60" width="30" height="50" rx="4" fill="#F97316" opacity="0.8"/>
+  <text x="200" y="175" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#9A3412" font-weight="600">Debouchage Urgence 24h/7j</text>
+</svg>
